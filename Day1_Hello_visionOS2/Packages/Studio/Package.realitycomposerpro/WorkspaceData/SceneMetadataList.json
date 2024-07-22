@@ -1,0 +1,59 @@
+{
+  "08258AB8-4057-4084-B935-301B672AACCC" : {
+    "objectMetadataList" : [
+      [
+        "08258AB8-4057-4084-B935-301B672AACCC",
+        "Root"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "08258AB8-4057-4084-B935-301B672AACCC",
+        "Root",
+        "DarkState"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "08258AB8-4057-4084-B935-301B672AACCC",
+        "Root",
+        "DarkState",
+        "Visual"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "B35EFAA6-80DA-4DFD-945E-57C0DF8ACC10" : {
+    "objectMetadataList" : [
+      [
+        "B35EFAA6-80DA-4DFD-945E-57C0DF8ACC10",
+        "Root"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B35EFAA6-80DA-4DFD-945E-57C0DF8ACC10",
+        "Root",
+        "Visual"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  }
+}

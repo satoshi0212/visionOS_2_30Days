@@ -1,0 +1,19 @@
+{
+  "pathsToIds" : {
+    "Studio\/Sources\/Studio\/Studio.rkassets\/AAA_MainScene.usda" : "08258AB8-4057-4084-B935-301B672AACCC",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/extras\/LatLongRefTextureCoordinates.usda" : "0A1735B1-7C3F-4942-A23C-8521965BCE6F",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/meshes\/SpillTest.usda" : "BE17CE22-EDC2-419F-AC02-2F831AB19E56",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/meshes\/Studio_floor.usdc" : "7B4E4572-4753-43F5-AD9C-AB68310B9034",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/meshes\/Studio.usdc" : "1DC2A889-BCD3-4602-A314-5174F20B985B",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/Scene.usda" : "9D71FDD6-E8DE-4B74-8EA5-111BF6A35464",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/AAA_MainScene.usda" : "9EB84191-4AFF-4091-8CFA-718F14B264E1",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/Common.usda" : "7A993030-6FF8-4128-A20F-FC0F5BBDAD97",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/Studio_all.usda" : "45397B6F-5956-4957-912E-C47F4B84E5ED",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/studio_light.usda" : "64431938-E41C-4EE5-B459-6840D82F75C4",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/StudioDark.usda" : "2100A331-93CD-4478-88CF-4AACA4AEA913",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/StudioLight.usda" : "B35EFAA6-80DA-4DFD-945E-57C0DF8ACC10",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/scenes\/Untitled%20Scene.usda" : "E9845041-2F3E-44DC-8BAE-9CD96CEB1453",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/Studio_dark.usda" : "0962537F-C2A1-4472-BC0B-56D6F702DF6B",
+    "Studio\/Sources\/Studio\/Studio.rkassets\/studio_light.usda" : "0E07F7CF-2E7D-4D07-9D02-A79DC596EF4C"
+  }
+}

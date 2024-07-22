@@ -1,0 +1,1460 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root" (
+    active = true
+    references = None
+)
+{
+    reorder nameChildren = ["Visual", "Glass"]
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def Xform "Visual" (
+        active = true
+        references = None
+    )
+    {
+        reorder nameChildren = ["SpillTest", "Studio", "Studio_floor", "dome"]
+        def "Studio_floor" (
+            active = false
+            references = @../meshes/Studio_floor.usdc@
+        )
+        {
+            float3 xformOp:scale = (1, 1, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "_materials" (
+                references = None
+            )
+            {
+                over "Studio2" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio_floor/_materials/Studio2/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio_floor/_materials/Studio2/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup2_d.png@
+                        string inputs:filtertype
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-827.02203, -188.80493)
+                        int ui:nodegraph:node:stackingOrder = 1448
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio_floor/_materials/Studio2/Add.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        float inputs:opacityThreshold
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-306.60938, 112.96875)
+                        int ui:nodegraph:node:stackingOrder = 10
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio_floor/_materials/Studio2/uvmap.outputs:result>
+                    }
+
+                    def Shader "Normal"
+                    {
+                        uniform token info:id = "ND_normal_vector3"
+                        string inputs:space = "world"
+                        float3 outputs:out
+                        float2 ui:nodegraph:node:pos = (-1769.8156, 150.09221)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "Separate4" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_separate4_color4"
+                        color4f inputs:in.connect = </Root/Visual/Studio_floor/_materials/Studio2/RealitykitLightSpillSpecular.outputs:out>
+                        float outputs:outa
+                        float outputs:outb
+                        float outputs:outg
+                        float outputs:outr
+                        float2 ui:nodegraph:node:pos = (-1316.669, 146.94408)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "RealitykitLightSpillSpecular" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_light_spill_specular"
+                        float2 inputs:antialiasingStrength
+                        float3 inputs:normal.connect = </Root/Visual/Studio_floor/_materials/Studio2/Normal.outputs:out>
+                        float3 inputs:reflection_origin
+                        float3 inputs:unreflected_direction.connect = </Root/Visual/Studio_floor/_materials/Studio2/ViewDirection.outputs:out>
+                        float2 inputs:uv
+                        color4f outputs:out
+                        float2 ui:nodegraph:node:pos = (-1533.5205, 68.36985)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "Multiply" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_multiply_color3"
+                        color3f inputs:in1.connect = </Root/Visual/Studio_floor/_materials/Studio2/Mix.outputs:out>
+                        color3f inputs:in2.connect = </Root/Visual/Studio_floor/_materials/Studio2/Constant.outputs:out>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-648.54004, 222.2683)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "ViewDirection"
+                    {
+                        uniform token info:id = "ND_realitykit_viewdirection_vector3"
+                        float3 outputs:out
+                        float2 ui:nodegraph:node:pos = (-1773.6359, 62.744545)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "Mix" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_mix_color3"
+                        color3f inputs:bg
+                        color3f inputs:fg.connect = </Root/Visual/Studio_floor/_materials/Studio2/Combine3.outputs:out>
+                        float inputs:mix.connect = </Root/Visual/Studio_floor/_materials/Studio2/Separate4.outputs:outa>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-840.6573, 141.75267)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                        string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
+                    }
+
+                    def Shader "Combine3" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_combine3_color3"
+                        float inputs:in1.connect = </Root/Visual/Studio_floor/_materials/Studio2/Separate4.outputs:outr>
+                        float inputs:in2.connect = </Root/Visual/Studio_floor/_materials/Studio2/Separate4.outputs:outg>
+                        float inputs:in3.connect = </Root/Visual/Studio_floor/_materials/Studio2/Separate4.outputs:outb>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-1064.3369, 98.4636)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "Add" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_add_color3"
+                        color3f inputs:in1.connect = </Root/Visual/Studio_floor/_materials/Studio2/Image.outputs:out>
+                        color3f inputs:in2.connect = </Root/Visual/Studio_floor/_materials/Studio2/Multiply.outputs:out>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-543.75775, 94.49427)
+                        int ui:nodegraph:node:stackingOrder = 1446
+                    }
+
+                    def Shader "Constant" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_constant_color3"
+                        color3f inputs:value = (0.007843138, 0.007843138, 0.007843138) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-861.4815, 263.88156)
+                        int ui:nodegraph:node:stackingOrder = 1455
+                    }
+                }
+
+                over "Studio2_2" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (253.41707, 363.8885)
+                    int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 1376
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup2_2_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-600.3789, 77.91016)
+                        int ui:nodegraph:node:stackingOrder = 13
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Add.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        float inputs:opacityThreshold
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-53.192307, 366.35724)
+                        int ui:nodegraph:node:stackingOrder = 1376
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/uvmap.outputs:result>
+                    }
+
+                    def Shader "Normal"
+                    {
+                        uniform token info:id = "ND_normal_vector3"
+                        string inputs:space = "world"
+                        float3 outputs:out
+                        float2 ui:nodegraph:node:pos = (-1491.4497, 396.4249)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "Separate4" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_separate4_color4"
+                        color4f inputs:in.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/RealitykitLightSpillSpecular.outputs:out>
+                        float outputs:outa
+                        float outputs:outb
+                        float outputs:outg
+                        float outputs:outr
+                        float2 ui:nodegraph:node:pos = (-1038.3031, 393.27676)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "RealitykitLightSpillSpecular" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_light_spill_specular"
+                        float2 inputs:antialiasingStrength
+                        float3 inputs:normal.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Normal.outputs:out>
+                        float3 inputs:reflection_origin
+                        float3 inputs:unreflected_direction.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/ViewDirection.outputs:out>
+                        float2 inputs:uv
+                        color4f outputs:out
+                        float2 ui:nodegraph:node:pos = (-1255.1547, 314.70255)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "Multiply" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_multiply_color3"
+                        color3f inputs:in1.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Mix.outputs:out>
+                        color3f inputs:in2.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Constant.outputs:out>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-370.17416, 468.60098)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "ViewDirection"
+                    {
+                        uniform token info:id = "ND_realitykit_viewdirection_vector3"
+                        float3 outputs:out
+                        float2 ui:nodegraph:node:pos = (-1495.27, 309.07724)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "Mix" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_mix_color3"
+                        color3f inputs:bg
+                        color3f inputs:fg.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Combine3.outputs:out>
+                        float inputs:mix.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Separate4.outputs:outa>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-562.2914, 388.08536)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                        string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
+                    }
+
+                    def Shader "Combine3" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_combine3_color3"
+                        float inputs:in1.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Separate4.outputs:outr>
+                        float inputs:in2.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Separate4.outputs:outg>
+                        float inputs:in3.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Separate4.outputs:outb>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-785.97107, 344.7963)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "Add" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_add_color3"
+                        color3f inputs:in1.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Image.outputs:out>
+                        color3f inputs:in2.connect = </Root/Visual/Studio_floor/_materials/Studio2_2/Multiply.outputs:out>
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-265.39188, 340.82697)
+                        int ui:nodegraph:node:stackingOrder = 1333
+                    }
+
+                    def Shader "Constant" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_constant_color3"
+                        color3f inputs:value = (0.007843138, 0.007843138, 0.007843138) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-583.1156, 510.21426)
+                        int ui:nodegraph:node:stackingOrder = 1380
+                    }
+                }
+            }
+
+            over "Studio_2" (
+                references = None
+            )
+            {
+                over "Mesh_007" (
+                    references = None
+                )
+                {
+                }
+            }
+        }
+
+        def "Studio" (
+            active = true
+            references = @../meshes/Studio.usdc@
+        )
+        {
+            float3 xformOp:scale = (1, 1, 1)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "Studio_7" (
+                references = None
+            )
+            {
+            }
+
+            over "Studio_1" (
+                references = None
+            )
+            {
+                over "Mesh_005" (
+                    references = None
+                )
+                {
+                }
+            }
+
+            over "_materials" (
+                references = None
+            )
+            {
+                over "Studio5" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio5/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio5/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup5_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-580.3789, 97.91016)
+                        int ui:nodegraph:node:stackingOrder = 16
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio5/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-286.60938, 132.96875)
+                        int ui:nodegraph:node:stackingOrder = 12
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio5/uvmap.outputs:result>
+                    }
+                }
+
+                over "Studio1" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio1/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio1/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup1_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-600.3789, 77.91016)
+                        int ui:nodegraph:node:stackingOrder = 14
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio1/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-306.60938, 112.96875)
+                        int ui:nodegraph:node:stackingOrder = 11
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio1/uvmap.outputs:result>
+                    }
+                }
+
+                over "Studio2" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio2/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio2/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio2/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-286.60938, 132.96875)
+                        int ui:nodegraph:node:stackingOrder = 12
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/light/BakingGroup2.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-580.3789, 97.91016)
+                        int ui:nodegraph:node:stackingOrder = 14
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio2/uvmap.outputs:result>
+                    }
+                }
+
+                over "Studio3" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio3/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio3/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio3/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-286.60938, 132.96875)
+                        int ui:nodegraph:node:stackingOrder = 12
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup3_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-580.3789, 97.91016)
+                        int ui:nodegraph:node:stackingOrder = 15
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio3/uvmap.outputs:result>
+                    }
+                }
+
+                over "Studio4" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio4/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio4/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup4_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-580.3789, 97.91016)
+                        int ui:nodegraph:node:stackingOrder = 16
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio4/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-286.60938, 132.96875)
+                        int ui:nodegraph:node:stackingOrder = 12
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio4/uvmap.outputs:result>
+                    }
+                }
+
+                over "Studio6" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio6/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio6/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio6/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-286.60938, 132.96875)
+                        int ui:nodegraph:node:stackingOrder = 12
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup6_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-580.3789, 97.91016)
+                        int ui:nodegraph:node:stackingOrder = 16
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio6/uvmap.outputs:result>
+                    }
+                }
+
+                over "Studio7" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio7/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio7/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio7/Image.outputs:out>
+                        bool inputs:hasPremultipliedAlpha
+                        float inputs:opacity
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-286.60938, 132.96875)
+                        int ui:nodegraph:node:stackingOrder = 12
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup7_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-580.3789, 97.91016)
+                        int ui:nodegraph:node:stackingOrder = 16
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio7/uvmap.outputs:result>
+                    }
+                }
+
+                over "StudioGlassCatwalk" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/StudioGlassCatwalk/Principled_BSDF.outputs:surface>
+
+                    over "Principled_BSDF"
+                    {
+                        color3f inputs:diffuseColor = (0.015197565, 0.015105216, 0.019708807) (
+                            colorSpace = "srgb_displayp3"
+                        )
+                        float inputs:opacity = 0.6
+                        float inputs:roughness = 0.1
+                    }
+                }
+
+                over "Studio1_1" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/Studio/_materials/Studio1_1/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/Studio1_1/Principled_BSDF.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "Principled_BSDF" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        bool inputs:applyPostProcessToneMap = 0
+                        color3f inputs:color.connect = </Root/Visual/Studio/_materials/Studio1_1/Image.outputs:out>
+                        float inputs:opacity
+                        float inputs:opacityThreshold
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-268.33984, 108.74219)
+                        int ui:nodegraph:node:stackingOrder = 2
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/dark/BakingGroup1_1_d.png@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-531.2539, 63.246094)
+                        int ui:nodegraph:node:stackingOrder = 5
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/Studio1_1/uvmap.outputs:result>
+                    }
+                }
+
+                over "StudioGlassSkydome" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/Studio/_materials/StudioGlassSkydome/Principled_BSDF.outputs:surface>
+
+                    over "Principled_BSDF"
+                    {
+                        float3 inputs:normal.connect = </Root/Visual/Studio/_materials/StudioGlassSkydome/Image_Texture.outputs:rgb>
+                        float inputs:opacity = 0.2
+                        float inputs:roughness = 0.1
+                    }
+
+                    over "Image_Texture"
+                    {
+                        float2 inputs:st.connect = </Root/Visual/Studio/_materials/StudioGlassSkydome/uvmap.outputs:result>
+                    }
+                }
+            }
+
+            over "Studio_Glass_Catwalk" (
+                references = None
+            )
+            {
+                over "Mesh_002" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                    references = None
+                )
+                {
+                    rel material:binding = </Root/Visual/Studio/_materials/StudioGlassCatwalk> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                }
+            }
+
+            over "Studio_1_1" (
+                references = None
+            )
+            {
+            }
+
+            over "Studio_5" (
+                references = None
+            )
+            {
+            }
+
+            over "Studio_3" (
+                references = None
+            )
+            {
+            }
+
+            over "Studio_6" (
+                references = None
+            )
+            {
+            }
+        }
+
+        def "dome" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 0, 0)
+            }
+            references = @../meshes/dome.usdc@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1.0000001, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "_materials" (
+                references = None
+            )
+            {
+                over "Sky" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface.connect = </Root/Visual/dome/_materials/Sky/UnlitSurface.outputs:out>
+                    token outputs:realitykit:vertex
+                    token outputs:surface.connect = </Root/Visual/dome/_materials/Sky/previewShader.outputs:surface>
+                    float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+                    over "previewShader" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    def Shader "UnlitSurface" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                        color3f inputs:color.connect = </Root/Visual/dome/_materials/Sky/Image.outputs:out>
+                        float inputs:opacity
+                        float inputs:opacityThreshold
+                        token outputs:out
+                        float2 ui:nodegraph:node:pos = (-358.97266, 129.40234)
+                        int ui:nodegraph:node:stackingOrder = 1
+                    }
+
+                    def Shader "Image" (
+                        references = None
+                    )
+                    {
+                        uniform token info:id = "ND_image_color3"
+                        asset inputs:file = @../textures/skies/Studio_sky_LatLong_Dark.exr@
+                        color3f outputs:out
+                        float2 ui:nodegraph:node:pos = (-652.10156, 119.61328)
+                        int ui:nodegraph:node:stackingOrder = 6
+                    }
+                }
+            }
+
+            over "Mesh_012" (
+                references = None
+            )
+            {
+            }
+        }
+
+        def "SpillTest" (
+            active = true
+            references = @../meshes/SpillTest.usda@</studio_floor>
+        )
+        {
+            reorder nameChildren = ["Studio_2_2", "Studio_2", "Studio_2b", "Studio_2_2b"]
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "Studio_2b" (
+                references = None
+            )
+            {
+                token outputs:mtlx:surface.connect = </Root/Visual/SpillTest/Studio_2b/UnlitSurface.outputs:out>
+                token outputs:realitykit:vertex
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (580.62115, 353.0917)
+                int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 3007
+
+                def Shader "UnlitSurface" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                    bool inputs:applyPostProcessToneMap = 0
+                    color3f inputs:color.connect = </Root/Visual/SpillTest/Studio_2b/Image.outputs:out>
+                    bool inputs:hasPremultipliedAlpha
+                    float inputs:opacity
+                    float inputs:opacityThreshold
+                    token outputs:out
+                    float2 ui:nodegraph:node:pos = (306.64792, 299.6282)
+                    int ui:nodegraph:node:stackingOrder = 3005
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:opacityThreshold"]
+                }
+
+                def Shader "Multiply" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_multiply_color3"
+                    color3f inputs:in1.connect = </Root/Visual/SpillTest/Studio_2b/Swizzle.outputs:out>
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2b/Constant.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-333.60464, 137.93149)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Separate4" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_separate4_color4"
+                    color4f inputs:in.connect = </Root/Visual/SpillTest/Studio_2b/RealitykitLightSpillSpecular.outputs:out>
+                    float outputs:outa
+                    float outputs:outb
+                    float outputs:outg
+                    float outputs:outr
+                    float2 ui:nodegraph:node:pos = (-788.1222, 447.73346)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Add_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_add_color3"
+                    color3f inputs:in1.connect = </Root/Visual/SpillTest/Studio_2b/Add.outputs:out>
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2b/Multiply_1.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (96.50187, 298.74524)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "RealitykitLightSpillDiffuse" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_light_spill_diffuse"
+                    asset inputs:attenuationMap = @../textures/common/DefaultAttenuationMap.exr@
+                    float2 inputs:attenuationUV.connect = </Root/Visual/SpillTest/Studio_2b/UsdPrimvarReader_1.outputs:out>
+                    float2 inputs:emitterUV.connect = </Root/Visual/SpillTest/Studio_2b/UsdPrimvarReader_2.outputs:out>
+                    color4f outputs:out
+                    float2 ui:nodegraph:node:pos = (-818.8642, 80.80442)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:attenuationUV", "inputs:attenuationMap", "inputs:attenuationMap"]
+                }
+
+                def Shader "Normal" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_normal_vector3"
+                    string inputs:space = "world"
+                    float3 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1324.1931, 440.30344)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Mix" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_mix_color3"
+                    color3f inputs:bg
+                    color3f inputs:fg.connect = </Root/Visual/SpillTest/Studio_2b/Combine3.outputs:out>
+                    float inputs:mix.connect = </Root/Visual/SpillTest/Studio_2b/Separate4.outputs:outa>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-347.21893, 443.48273)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
+                }
+
+                def Shader "ViewDirection" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_viewdirection_vector3"
+                    float3 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1368.4503, 372.66452)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Combine3" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_combine3_color3"
+                    float inputs:in1.connect = </Root/Visual/SpillTest/Studio_2b/Separate4.outputs:outr>
+                    float inputs:in2.connect = </Root/Visual/SpillTest/Studio_2b/Separate4.outputs:outg>
+                    float inputs:in3.connect = </Root/Visual/SpillTest/Studio_2b/Separate4.outputs:outb>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-557.0704, 423.1299)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Swizzle" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_swizzle_color4_color3"
+                    string inputs:channels
+                    color4f inputs:in.connect = </Root/Visual/SpillTest/Studio_2b/RealitykitLightSpillDiffuse.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-520.52527, 102.43969)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "UsdPrimvarReader" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_UsdPrimvarReader_vector2"
+                    string inputs:varname = "UVChannel_1"
+                    float2 outputs:out
+                    float2 ui:nodegraph:node:pos = (-686.84973, -218.8825)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:varname"]
+                }
+
+                def Shader "UsdPrimvarReader_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_UsdPrimvarReader_vector2"
+                    string inputs:varname = "attenuationUVs"
+                    float2 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1176.7756, 151.75839)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Constant_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_constant_color3"
+                    color3f inputs:value = (0.003921569, 0.003921569, 0.003921569) (
+                        colorSpace = "lin_srgb"
+                    )
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-368.04315, 565.61163)
+                    int ui:nodegraph:node:stackingOrder = 3292
+                }
+
+                def Shader "Add" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_add_color3"
+                    color3f inputs:in1.connect = None
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2b/Multiply.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-169.80984, 57.58444)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "RealitykitLightSpillSpecular" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_light_spill_specular"
+                    float2 inputs:antialiasingStrength
+                    float3 inputs:normal.connect = </Root/Visual/SpillTest/Studio_2b/Normal.outputs:out>
+                    float3 inputs:reflection_origin
+                    float3 inputs:unreflected_direction.connect = </Root/Visual/SpillTest/Studio_2b/ViewDirection.outputs:out>
+                    float2 inputs:uv
+                    color4f outputs:out
+                    float2 ui:nodegraph:node:pos = (-1042.4592, 374.79755)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Constant" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_constant_color3"
+                    color3f inputs:value = (1, 1, 1) (
+                        colorSpace = "lin_srgb"
+                    )
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-527.64777, 179.34718)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "Multiply_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_multiply_color3"
+                    color3f inputs:in1.connect = </Root/Visual/SpillTest/Studio_2b/Mix.outputs:out>
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2b/Constant_1.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-155.10173, 523.9984)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                }
+
+                def Shader "UsdPrimvarReader_2" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_UsdPrimvarReader_vector2"
+                    string inputs:varname = "emitterUVs"
+                    float2 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1176.6125, -8.547289)
+                    int ui:nodegraph:node:stackingOrder = 3285
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:fallback"]
+                }
+
+                def Shader "Image" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_image_color3"
+                    color3f inputs:default
+                    asset inputs:file = @../textures/dark/BakingGroup2_d.png@
+                    string inputs:filtertype
+                    float2 inputs:texcoord.connect = </Root/Visual/SpillTest/Studio_2b/UsdPrimvarReader.outputs:out>
+                    string inputs:uaddressmode
+                    string inputs:vaddressmode
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-431.50497, -237.78238)
+                    int ui:nodegraph:node:stackingOrder = 3286
+                }
+            }
+
+            def Material "Studio_2_2b" (
+                references = None
+            )
+            {
+                token outputs:mtlx:surface.connect = </Root/Visual/SpillTest/Studio_2_2b/UnlitSurface.outputs:out>
+                token outputs:realitykit:vertex
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (541.056, 371.28638)
+                int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 3209
+
+                def Shader "UnlitSurface" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                    bool inputs:applyPostProcessToneMap = 0
+                    color3f inputs:color.connect = </Root/Visual/SpillTest/Studio_2_2b/Image.outputs:out>
+                    bool inputs:hasPremultipliedAlpha
+                    float inputs:opacity
+                    float inputs:opacityThreshold
+                    token outputs:out
+                    float2 ui:nodegraph:node:pos = (304.14655, 319.62265)
+                    int ui:nodegraph:node:stackingOrder = 3209
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:opacityThreshold"]
+                }
+
+                def Shader "UsdPrimvarReader" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_UsdPrimvarReader_vector2"
+                    float2 inputs:fallback
+                    string inputs:varname = "UVChannel_1"
+                    float2 outputs:out
+                    float2 ui:nodegraph:node:pos = (-758.3991, -194.25534)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:varname"]
+                }
+
+                def Shader "Add" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_add_color3"
+                    color3f inputs:in1.connect = None
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2_2b/Multiply.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-149.80984, 77.58444)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Multiply_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_multiply_color3"
+                    color3f inputs:in1.connect = </Root/Visual/SpillTest/Studio_2_2b/Mix.outputs:out>
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2_2b/Constant_1.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-135.10173, 543.9984)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Add_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_add_color3"
+                    color3f inputs:in1.connect = </Root/Visual/SpillTest/Studio_2_2b/Add.outputs:out>
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2_2b/Multiply_1.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (116.50187, 318.74524)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Combine3" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_combine3_color3"
+                    float inputs:in1.connect = </Root/Visual/SpillTest/Studio_2_2b/Separate4.outputs:outr>
+                    float inputs:in2.connect = </Root/Visual/SpillTest/Studio_2_2b/Separate4.outputs:outg>
+                    float inputs:in3.connect = </Root/Visual/SpillTest/Studio_2_2b/Separate4.outputs:outb>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-537.0704, 443.1299)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Constant_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_constant_color3"
+                    color3f inputs:value = (0.003921569, 0.003921569, 0.003921569) (
+                        colorSpace = "lin_srgb"
+                    )
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-348.04315, 585.61163)
+                    int ui:nodegraph:node:stackingOrder = 3533
+                }
+
+                def Shader "ViewDirection" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_viewdirection_vector3"
+                    float3 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1348.4503, 392.66452)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Multiply" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_multiply_color3"
+                    color3f inputs:in1.connect = </Root/Visual/SpillTest/Studio_2_2b/Swizzle.outputs:out>
+                    color3f inputs:in2.connect = </Root/Visual/SpillTest/Studio_2_2b/Constant.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-313.60464, 157.93149)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "UsdPrimvarReader_2" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_UsdPrimvarReader_vector2"
+                    string inputs:varname = "emitterUVs"
+                    float2 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1156.6125, 11.452711)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:fallback"]
+                }
+
+                def Shader "Swizzle" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_swizzle_color4_color3"
+                    string inputs:channels
+                    color4f inputs:in.connect = </Root/Visual/SpillTest/Studio_2_2b/RealitykitLightSpillDiffuse.outputs:out>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-503.8598, 103.418144)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Mix" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_mix_color3"
+                    color3f inputs:bg
+                    color3f inputs:fg.connect = </Root/Visual/SpillTest/Studio_2_2b/Combine3.outputs:out>
+                    float inputs:mix.connect = </Root/Visual/SpillTest/Studio_2_2b/Separate4.outputs:outa>
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-327.21893, 463.48273)
+                    int ui:nodegraph:node:stackingOrder = 3526
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
+                }
+
+                def Shader "Image" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_image_color3"
+                    color3f inputs:default
+                    asset inputs:file = @../textures/dark/BakingGroup2_2_d.png@
+                    string inputs:filtertype
+                    float2 inputs:texcoord.connect = </Root/Visual/SpillTest/Studio_2_2b/UsdPrimvarReader.outputs:out>
+                    string inputs:uaddressmode
+                    string inputs:vaddressmode
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-468.90942, -212.23589)
+                    int ui:nodegraph:node:stackingOrder = 3525
+                }
+
+                def Shader "Constant" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_constant_color3"
+                    color3f inputs:value = (1, 1, 1) (
+                        colorSpace = "lin_srgb"
+                    )
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-511.15692, 214.98349)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "Normal" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_normal_vector3"
+                    string inputs:space = "world"
+                    float3 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1304.1931, 460.30344)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "RealitykitLightSpillDiffuse" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_light_spill_diffuse"
+                    asset inputs:attenuationMap = @../textures/common/DefaultAttenuationMap.exr@
+                    float2 inputs:attenuationUV.connect = </Root/Visual/SpillTest/Studio_2_2b/UsdPrimvarReader_1.outputs:out>
+                    float2 inputs:emitterUV.connect = </Root/Visual/SpillTest/Studio_2_2b/UsdPrimvarReader_2.outputs:out>
+                    color4f outputs:out
+                    float2 ui:nodegraph:node:pos = (-798.8642, 100.80442)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:attenuationUV", "inputs:attenuationMap", "inputs:attenuationMap"]
+                }
+
+                def Shader "Separate4" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_separate4_color4"
+                    color4f inputs:in.connect = </Root/Visual/SpillTest/Studio_2_2b/RealitykitLightSpillSpecular.outputs:out>
+                    float outputs:outa
+                    float outputs:outb
+                    float outputs:outg
+                    float outputs:outr
+                    float2 ui:nodegraph:node:pos = (-768.1222, 467.73346)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "RealitykitLightSpillSpecular" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_realitykit_light_spill_specular"
+                    float2 inputs:antialiasingStrength
+                    float3 inputs:normal.connect = </Root/Visual/SpillTest/Studio_2_2b/Normal.outputs:out>
+                    float3 inputs:reflection_origin
+                    float3 inputs:unreflected_direction.connect = </Root/Visual/SpillTest/Studio_2_2b/ViewDirection.outputs:out>
+                    float2 inputs:uv
+                    color4f outputs:out
+                    float2 ui:nodegraph:node:pos = (-1022.4592, 394.79755)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+
+                def Shader "UsdPrimvarReader_1" (
+                    references = None
+                )
+                {
+                    uniform token info:id = "ND_UsdPrimvarReader_vector2"
+                    string inputs:varname = "attenuationUVs"
+                    float2 outputs:out
+                    float2 ui:nodegraph:node:pos = (-1156.7756, 171.75839)
+                    int ui:nodegraph:node:stackingOrder = 3524
+                }
+            }
+
+            over "Studio_2" (
+                references = None
+            )
+            {
+                over "Mesh_007" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                    references = None
+                )
+                {
+                    rel material:binding = </Root/Visual/SpillTest/Studio_2b> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                }
+            }
+
+            over "Studio_2_2" (
+                references = None
+            )
+            {
+                over "Mesh_008" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                    references = None
+                )
+                {
+                    rel material:binding = </Root/Visual/SpillTest/Studio_2_2b> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                }
+            }
+        }
+    }
+}
+

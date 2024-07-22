@@ -1,0 +1,177 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root" (
+    references = None
+)
+{
+    reorder nameChildren = ["LightState", "DarkState", "Common"]
+    def "DarkState" (
+        references = @scenes/StudioDark.usda@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+
+        over "Visual" (
+            references = None
+        )
+        {
+            over "SpillTest" (
+                references = None
+            )
+            {
+                over "Studio_2_2" (
+                    references = None
+                )
+                {
+                    over "Mesh_008" (
+                        references = None
+                    )
+                    {
+                    }
+                }
+
+                over "Studio_2" (
+                    references = None
+                )
+                {
+                    over "Mesh_007" (
+                        references = None
+                    )
+                    {
+                    }
+                }
+
+                over "Studio_2b" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_2_2b" (
+                    references = None
+                )
+                {
+                }
+            }
+
+            over "Studio" (
+                references = None
+            )
+            {
+                over "Studio_Glass_Skylight" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_Glass_Catwalk" (
+                    references = None
+                )
+                {
+                }
+
+                over "StudioViewBox" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_5" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_6" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_1" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_3" (
+                    references = None
+                )
+                {
+                }
+
+                over "Studio_7" (
+                    references = None
+                )
+                {
+                }
+
+                over "_materials" (
+                    references = None
+                )
+                {
+                    over "Studio5" (
+                        references = None
+                    )
+                    {
+                    }
+
+                    over "Studio7" (
+                        references = None
+                    )
+                    {
+                    }
+
+                    over "Studio1" (
+                        references = None
+                    )
+                    {
+                    }
+
+                    over "Studio6" (
+                        references = None
+                    )
+                    {
+                    }
+                }
+            }
+
+            over "dome" (
+                references = None
+            )
+            {
+            }
+
+            over "Studio_floor" (
+                references = None
+            )
+            {
+            }
+        }
+
+        def RealityKitComponent "VirtualEnvironmentProbe"
+        {
+            token blendMode = "single"
+            uniform token info:id = "RealityKit.VirtualEnvironmentProbe"
+
+            def RealityKitStruct "Resource1"
+            {
+                asset ibl = @ibl/Studio_IBL_LatLong_Dark.exr@
+                float intensityExponent = 1
+            }
+
+            def RealityKitStruct "Resource2"
+            {
+            }
+        }
+    }
+}
+
