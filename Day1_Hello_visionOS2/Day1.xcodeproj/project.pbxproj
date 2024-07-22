@@ -51,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				8E1B62D42C4DF568000E5B00 /* Day1 */,
-				8E1B62D52C4DF568000E5B00 /* Packages */,
 				8E1B62D32C4DF568000E5B00 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,13 +77,6 @@
 				8E1B62E52C4DF569000E5B00 /* Preview Content */,
 			);
 			path = Day1;
-			sourceTree = "<group>";
-		};
-		8E1B62D52C4DF568000E5B00 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		8E1B62E52C4DF569000E5B00 /* Preview Content */ = {
