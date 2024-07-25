@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E1B62162C490CDF000E5B00 /* Day3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62152C490CDF000E5B00 /* Day3App.swift */; };
+		8E1B62182C490CDF000E5B00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62172C490CDF000E5B00 /* ContentView.swift */; };
+		8E1B621A2C490CDF000E5B00 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62192C490CDF000E5B00 /* AppModel.swift */; };
+		8E1B621C2C490CDF000E5B00 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B621B2C490CDF000E5B00 /* ToggleImmersiveSpaceButton.swift */; };
+		8E1B62202C490CE0000E5B00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B621F2C490CE0000E5B00 /* Assets.xcassets */; };
+		8E1B62232C490CE0000E5B00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B62222C490CE0000E5B00 /* Preview Assets.xcassets */; };
+		8E1B622B2C491CF1000E5B00 /* DrawingMeshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B622A2C491CF1000E5B00 /* DrawingMeshView.swift */; };
+		8E1B622D2C491D21000E5B00 /* SolidBrushSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B622C2C491D21000E5B00 /* SolidBrushSystem.swift */; };
+		8E1B62322C491DAB000E5B00 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1B62312C491DAB000E5B00 /* Algorithms */; };
+		8E1B62342C491DBC000E5B00 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 8E1B62332C491DBC000E5B00 /* Collections */; };
+		8E1B62382C491F2D000E5B00 /* DrawingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62372C491F2D000E5B00 /* DrawingDocument.swift */; };
+		8E1B623A2C491F45000E5B00 /* DrawingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62392C491F45000E5B00 /* DrawingSource.swift */; };
+		8E1B623C2C491FB3000E5B00 /* AnchorEntityInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B623B2C491FB3000E5B00 /* AnchorEntityInputProvider.swift */; };
+		8E1B623E2C49201C000E5B00 /* SolidDrawingMeshGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B623D2C49201C000E5B00 /* SolidDrawingMeshGenerator.swift */; };
+		8E1B62402C4920E5000E5B00 /* SmoothCurveSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B623F2C4920E5000E5B00 /* SmoothCurveSampler.swift */; };
+		8E1B62462C49211D000E5B00 /* MathUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62422C49211D000E5B00 /* MathUtilities.swift */; };
+		8E1B62472C49211D000E5B00 /* CurveProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62412C49211D000E5B00 /* CurveProcessing.swift */; };
+		8E1B62482C49211D000E5B00 /* MetalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62442C49211D000E5B00 /* MetalUtilities.swift */; };
+		8E1B624A2C492156000E5B00 /* SolidBrushCurvePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62492C492156000E5B00 /* SolidBrushCurvePoint.swift */; };
+		8E1B624C2C4921FC000E5B00 /* CurveSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B624B2C4921FC000E5B00 /* CurveSample.swift */; };
+		8E1B624E2C492234000E5B00 /* CurveExtruderWithEndcaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B624D2C492234000E5B00 /* CurveExtruderWithEndcaps.swift */; };
+		8E1B62502C492255000E5B00 /* CurveExtruder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B624F2C492255000E5B00 /* CurveExtruder.swift */; };
+		8E1B62572C492429000E5B00 /* SolidBrushVertext+LowLevelMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B62562C492429000E5B00 /* SolidBrushVertext+LowLevelMesh.swift */; };
+		8EC891EF2C520F740016A493 /* BrushSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC891EE2C520F740016A493 /* BrushSettings.swift */; };
+		8EE9DA7A2C510A9A00794525 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 8EE9DA792C510A9A00794525 /* RealityKitContent */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8E1B620E2C490CDF000E5B00 /* Day3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1B62152C490CDF000E5B00 /* Day3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3App.swift; sourceTree = "<group>"; };
+		8E1B62172C490CDF000E5B00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8E1B62192C490CDF000E5B00 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		8E1B621B2C490CDF000E5B00 /* ToggleImmersiveSpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleImmersiveSpaceButton.swift; sourceTree = "<group>"; };
+		8E1B621F2C490CE0000E5B00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E1B62222C490CE0000E5B00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8E1B62242C490CE0000E5B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E1B622A2C491CF1000E5B00 /* DrawingMeshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingMeshView.swift; sourceTree = "<group>"; };
+		8E1B622C2C491D21000E5B00 /* SolidBrushSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidBrushSystem.swift; sourceTree = "<group>"; };
+		8E1B62372C491F2D000E5B00 /* DrawingDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDocument.swift; sourceTree = "<group>"; };
+		8E1B62392C491F45000E5B00 /* DrawingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingSource.swift; sourceTree = "<group>"; };
+		8E1B623B2C491FB3000E5B00 /* AnchorEntityInputProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorEntityInputProvider.swift; sourceTree = "<group>"; };
+		8E1B623D2C49201C000E5B00 /* SolidDrawingMeshGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidDrawingMeshGenerator.swift; sourceTree = "<group>"; };
+		8E1B623F2C4920E5000E5B00 /* SmoothCurveSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothCurveSampler.swift; sourceTree = "<group>"; };
+		8E1B62412C49211D000E5B00 /* CurveProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveProcessing.swift; sourceTree = "<group>"; };
+		8E1B62422C49211D000E5B00 /* MathUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtilities.swift; sourceTree = "<group>"; };
+		8E1B62432C49211D000E5B00 /* MetalPacking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalPacking.h; sourceTree = "<group>"; };
+		8E1B62442C49211D000E5B00 /* MetalUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalUtilities.swift; sourceTree = "<group>"; };
+		8E1B62492C492156000E5B00 /* SolidBrushCurvePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidBrushCurvePoint.swift; sourceTree = "<group>"; };
+		8E1B624B2C4921FC000E5B00 /* CurveSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveSample.swift; sourceTree = "<group>"; };
+		8E1B624D2C492234000E5B00 /* CurveExtruderWithEndcaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveExtruderWithEndcaps.swift; sourceTree = "<group>"; };
+		8E1B624F2C492255000E5B00 /* CurveExtruder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveExtruder.swift; sourceTree = "<group>"; };
+		8E1B62512C492289000E5B00 /* SolidBrushVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SolidBrushVertex.h; sourceTree = "<group>"; };
+		8E1B62562C492429000E5B00 /* SolidBrushVertext+LowLevelMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SolidBrushVertext+LowLevelMesh.swift"; sourceTree = "<group>"; };
+		8E1B62582C49278F000E5B00 /* Day3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Day3-Bridging-Header.h"; sourceTree = "<group>"; };
+		8EC891EE2C520F740016A493 /* BrushSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushSettings.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E1B620B2C490CDF000E5B00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E1B62342C491DBC000E5B00 /* Collections in Frameworks */,
+				8EE9DA7A2C510A9A00794525 /* RealityKitContent in Frameworks */,
+				8E1B62322C491DAB000E5B00 /* Algorithms in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E1B62052C490CDF000E5B00 = {
+			isa = PBXGroup;
+			children = (
+				8E1B62102C490CDF000E5B00 /* Day3 */,
+				8E1B620F2C490CDF000E5B00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E1B620F2C490CDF000E5B00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B620E2C490CDF000E5B00 /* Day3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E1B62102C490CDF000E5B00 /* Day3 */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B62152C490CDF000E5B00 /* Day3App.swift */,
+				8E1B62172C490CDF000E5B00 /* ContentView.swift */,
+				8E1B62192C490CDF000E5B00 /* AppModel.swift */,
+				8EC891EE2C520F740016A493 /* BrushSettings.swift */,
+				8E1B621B2C490CDF000E5B00 /* ToggleImmersiveSpaceButton.swift */,
+				8E1B621F2C490CE0000E5B00 /* Assets.xcassets */,
+				8E1B62242C490CE0000E5B00 /* Info.plist */,
+				8E1B622A2C491CF1000E5B00 /* DrawingMeshView.swift */,
+				8E1B625D2C4928A5000E5B00 /* Document */,
+				8E1B62522C4922AC000E5B00 /* Brushes */,
+				8E1B62452C49211D000E5B00 /* Utilities */,
+				8E1B62212C490CE0000E5B00 /* Preview Content */,
+				8E1B62582C49278F000E5B00 /* Day3-Bridging-Header.h */,
+			);
+			path = Day3;
+			sourceTree = "<group>";
+		};
+		8E1B62212C490CE0000E5B00 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B62222C490CE0000E5B00 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8E1B62452C49211D000E5B00 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B62432C49211D000E5B00 /* MetalPacking.h */,
+				8E1B62412C49211D000E5B00 /* CurveProcessing.swift */,
+				8E1B62422C49211D000E5B00 /* MathUtilities.swift */,
+				8E1B62442C49211D000E5B00 /* MetalUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8E1B62522C4922AC000E5B00 /* Brushes */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B62532C4922BB000E5B00 /* Solid */,
+			);
+			path = Brushes;
+			sourceTree = "<group>";
+		};
+		8E1B62532C4922BB000E5B00 /* Solid */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B625B2C4927EF000E5B00 /* CurveProcessing */,
+				8E1B625C2C492812000E5B00 /* Style */,
+				8E1B62512C492289000E5B00 /* SolidBrushVertex.h */,
+				8E1B62562C492429000E5B00 /* SolidBrushVertext+LowLevelMesh.swift */,
+				8E1B623D2C49201C000E5B00 /* SolidDrawingMeshGenerator.swift */,
+				8E1B622C2C491D21000E5B00 /* SolidBrushSystem.swift */,
+				8E1B624F2C492255000E5B00 /* CurveExtruder.swift */,
+				8E1B624D2C492234000E5B00 /* CurveExtruderWithEndcaps.swift */,
+			);
+			path = Solid;
+			sourceTree = "<group>";
+		};
+		8E1B625B2C4927EF000E5B00 /* CurveProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B624B2C4921FC000E5B00 /* CurveSample.swift */,
+				8E1B623F2C4920E5000E5B00 /* SmoothCurveSampler.swift */,
+			);
+			path = CurveProcessing;
+			sourceTree = "<group>";
+		};
+		8E1B625C2C492812000E5B00 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B62492C492156000E5B00 /* SolidBrushCurvePoint.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		8E1B625D2C4928A5000E5B00 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B62372C491F2D000E5B00 /* DrawingDocument.swift */,
+				8E1B62392C491F45000E5B00 /* DrawingSource.swift */,
+				8E1B623B2C491FB3000E5B00 /* AnchorEntityInputProvider.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E1B620D2C490CDF000E5B00 /* Day3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E1B62272C490CE0000E5B00 /* Build configuration list for PBXNativeTarget "Day3" */;
+			buildPhases = (
+				8E1B620A2C490CDF000E5B00 /* Sources */,
+				8E1B620B2C490CDF000E5B00 /* Frameworks */,
+				8E1B620C2C490CDF000E5B00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Day3;
+			packageProductDependencies = (
+				8E1B62312C491DAB000E5B00 /* Algorithms */,
+				8E1B62332C491DBC000E5B00 /* Collections */,
+				8EE9DA792C510A9A00794525 /* RealityKitContent */,
+			);
+			productName = Day3;
+			productReference = 8E1B620E2C490CDF000E5B00 /* Day3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E1B62062C490CDF000E5B00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8E1B620D2C490CDF000E5B00 = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
+					};
+				};
+			};
+			buildConfigurationList = 8E1B62092C490CDF000E5B00 /* Build configuration list for PBXProject "Day3" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E1B62052C490CDF000E5B00;
+			packageReferences = (
+				8E1B622E2C491D82000E5B00 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				8E1B622F2C491D9C000E5B00 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				8EE9DA782C510A9A00794525 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */,
+			);
+			productRefGroup = 8E1B620F2C490CDF000E5B00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E1B620D2C490CDF000E5B00 /* Day3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E1B620C2C490CDF000E5B00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E1B62232C490CE0000E5B00 /* Preview Assets.xcassets in Resources */,
+				8E1B62202C490CE0000E5B00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E1B620A2C490CDF000E5B00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E1B62382C491F2D000E5B00 /* DrawingDocument.swift in Sources */,
+				8E1B623E2C49201C000E5B00 /* SolidDrawingMeshGenerator.swift in Sources */,
+				8E1B622B2C491CF1000E5B00 /* DrawingMeshView.swift in Sources */,
+				8E1B621C2C490CDF000E5B00 /* ToggleImmersiveSpaceButton.swift in Sources */,
+				8E1B62572C492429000E5B00 /* SolidBrushVertext+LowLevelMesh.swift in Sources */,
+				8E1B624E2C492234000E5B00 /* CurveExtruderWithEndcaps.swift in Sources */,
+				8E1B622D2C491D21000E5B00 /* SolidBrushSystem.swift in Sources */,
+				8E1B62182C490CDF000E5B00 /* ContentView.swift in Sources */,
+				8E1B62402C4920E5000E5B00 /* SmoothCurveSampler.swift in Sources */,
+				8E1B624C2C4921FC000E5B00 /* CurveSample.swift in Sources */,
+				8E1B623A2C491F45000E5B00 /* DrawingSource.swift in Sources */,
+				8E1B621A2C490CDF000E5B00 /* AppModel.swift in Sources */,
+				8E1B62462C49211D000E5B00 /* MathUtilities.swift in Sources */,
+				8E1B62472C49211D000E5B00 /* CurveProcessing.swift in Sources */,
+				8E1B62482C49211D000E5B00 /* MetalUtilities.swift in Sources */,
+				8E1B624A2C492156000E5B00 /* SolidBrushCurvePoint.swift in Sources */,
+				8E1B62162C490CDF000E5B00 /* Day3App.swift in Sources */,
+				8EC891EF2C520F740016A493 /* BrushSettings.swift in Sources */,
+				8E1B623C2C491FB3000E5B00 /* AnchorEntityInputProvider.swift in Sources */,
+				8E1B62502C492255000E5B00 /* CurveExtruder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8E1B62252C490CE0000E5B00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		8E1B62262C490CE0000E5B00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		8E1B62282C490CE0000E5B00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Day3/Preview Content\"";
+				DEVELOPMENT_TEAM = 247V527KAQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tokyo.shmdevelopment.Day3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Day3/Day3-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		8E1B62292C490CE0000E5B00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Day3/Preview Content\"";
+				DEVELOPMENT_TEAM = 247V527KAQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tokyo.shmdevelopment.Day3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Day3/Day3-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E1B62092C490CDF000E5B00 /* Build configuration list for PBXProject "Day3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E1B62252C490CE0000E5B00 /* Debug */,
+				8E1B62262C490CE0000E5B00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E1B62272C490CE0000E5B00 /* Build configuration list for PBXNativeTarget "Day3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E1B62282C490CE0000E5B00 /* Debug */,
+				8E1B62292C490CE0000E5B00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8EE9DA782C510A9A00794525 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/RealityKitContent;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E1B622E2C491D82000E5B00 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
+		8E1B622F2C491D9C000E5B00 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E1B62312C491DAB000E5B00 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E1B622F2C491D9C000E5B00 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		8E1B62332C491DBC000E5B00 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E1B622E2C491D82000E5B00 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		8EE9DA792C510A9A00794525 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8E1B62062C490CDF000E5B00 /* Project object */;
+}

@@ -1,0 +1,97 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root" (
+    references = None
+)
+{
+    def Material "Material" (
+        references = None
+    )
+    {
+        token outputs:mtlx:surface.connect = </Root/Material/PBRSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (432.05078, 205.48438)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 8
+
+        def Shader "PBRSurface" (
+            references = None
+        )
+        {
+            uniform token info:id = "ND_realitykit_pbr_surfaceshader"
+            float inputs:ambientOcclusion
+            color3f inputs:baseColor.connect = </Root/Material/GeomColor.outputs:out>
+            float3 inputs:clearcoatNormal
+            color3f inputs:emissiveColor
+            bool inputs:hasPremultipliedAlpha
+            float inputs:metallic.connect = </Root/Material/Metallic.outputs:out>
+            float3 inputs:normal
+            float inputs:roughness.connect = </Root/Material/Roughness.outputs:out>
+            float inputs:specular
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (179.33594, 80.84766)
+            int ui:nodegraph:node:stackingOrder = 6
+        }
+
+        def Shader "GeomColor" (
+            references = None
+        )
+        {
+            uniform token info:id = "ND_geomcolor_color3"
+            color3f outputs:out
+            float2 ui:nodegraph:node:pos = (-107.39844, -36.10547)
+            int ui:nodegraph:node:stackingOrder = 9
+        }
+
+        def Shader "Metallic" (
+            references = None
+        )
+        {
+            uniform token info:id = "ND_extract_vector4"
+            float4 inputs:in.connect = </Root/Material/UV3.outputs:out>
+            int inputs:index = 1
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-107.35156, 220.34766)
+            int ui:nodegraph:node:stackingOrder = 171
+        }
+
+        def Shader "Roughness" (
+            references = None
+        )
+        {
+            uniform token info:id = "ND_extract_vector4"
+            float4 inputs:in.connect = </Root/Material/UV3.outputs:out>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-114.94141, 141.36328)
+            int ui:nodegraph:node:stackingOrder = 168
+        }
+
+        def Shader "UV3" (
+            references = None
+        )
+        {
+            uniform token info:id = "ND_texcoord_vector4"
+            int inputs:index = 3
+            float4 outputs:out
+            float2 ui:nodegraph:node:pos = (-356.1289, 179.73828)
+            int ui:nodegraph:node:stackingOrder = 168
+        }
+
+        def Scope "Group" (
+            kind = "group"
+        )
+        {
+            string ui:group:annotation = "Use UV3 to extract material parameters"
+            string ui:group:annotationDescription = "Roughness is specified by the X coordinate and Metallic is specified by the Y coordinate"
+            string[] ui:group:members = ["p:Metallic", "p:Roughness", "p:UV3"]
+        }
+    }
+}
+
