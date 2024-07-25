@@ -57,13 +57,6 @@ final class AnchorEntityInputProvider {
         rootEntity.addChild(rightThumb)
         rootEntity.addChild(rightEntity)
     }
-
-    deinit {
-        Task {
-            print("■ stop called.")
-            await session.stop()
-        }
-    }
 }
 
 private class DrawingSystem: System {
