@@ -11,7 +11,7 @@ X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live)
 |:--|:--|:--:|:--:|
 | 1 | [Hello visionOS 2](https://x.com/shmdevelop/status/1815325916954087428) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/3771939e-5c3d-461a-b6df-80a41aa3b55d"> |
 | 2 | [Dynamic Light](https://x.com/shmdevelop/status/1815732198986977608) | - |  <img width="600" alt="" src="https://github.com/user-attachments/assets/86e51aa1-0bbb-4d43-95a2-03de10bdb9a5"> |
-
+| 3 | [Simple Drawing](https://x.com/shmdevelop/status/1816448533693940108) | - |  <img width="600" alt="" src="https://github.com/user-attachments/assets/9578cf90-8491-4c82-8913-7000cf3f6faa"> |
 
 # Sponsors
 
@@ -24,5 +24,6 @@ Thanks!
 - https://github.com/AndreasLS
 - https://github.com/ikkou
 - https://github.com/hiroyuki
+- https://github.com/longda
 
 [Your support is greatly appreciated! :+1:](https://github.com/sponsors/satoshi0212)
