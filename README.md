@@ -3,7 +3,7 @@ Your support is greatly appreciated! :+1:
 If this source code is helpful, please support me by [sponsoring this repo!](https://github.com/sponsors/satoshi0212)
 
 # visionOS_2_30Days
-30 days of visionOS 2 challenge.
+This is a new visionOS 30 days challenge!
 
 X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live) 
 
@@ -13,6 +13,7 @@ X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live)
 | 2 | [Dynamic Light](https://x.com/shmdevelop/status/1815732198986977608) | - |  <img width="600" alt="" src="https://github.com/user-attachments/assets/86e51aa1-0bbb-4d43-95a2-03de10bdb9a5"> |
 | 3 | [Simple Drawing](https://x.com/shmdevelop/status/1816448533693940108) | - |  <img width="600" alt="" src="https://github.com/user-attachments/assets/9578cf90-8491-4c82-8913-7000cf3f6faa"> |
 | 4 | [Connectable](https://x.com/shmdevelop/status/1816777882716516744) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/539ea696-dcec-4b04-beab-bc96df126d01"> |
+| 5 | [FadeIn, FadeOut](https://x.com/shmdevelop/status/1817817596135362891 | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/0ed0b399-0769-4920-8cb0-2e3b7b0bd207"> |
 
 # Sponsors
 
@@ -26,5 +27,6 @@ Thanks!
 - https://github.com/ikkou
 - https://github.com/hiroyuki
 - https://github.com/longda
+- https://github.com/aerickson14
 
 [Your support is greatly appreciated! :+1:](https://github.com/sponsors/satoshi0212)
