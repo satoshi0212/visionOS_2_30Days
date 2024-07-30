@@ -1,0 +1,76 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (448.0.5.508.2)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def Material "DynamicMaterial"
+    {
+        asset inputs:ImageInput (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (-487.51172, 38.839844)
+                    int stackingOrderInSubgraph = 93
+                }
+            }
+        )
+        token outputs:mtlx:surface.connect = </Root/DynamicMaterial/UnlitSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (397.41406, 97.05469)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 27
+
+        def Shader "PreviewSurface"
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            color3f inputs:diffuseColor.connect = </Root/DynamicMaterial/Image.outputs:out>
+            float inputs:ior
+            float inputs:metallic
+            float3 inputs:normal
+            float inputs:occlusion
+            float inputs:opacity
+            float inputs:opacityThreshold
+            float inputs:roughness
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (135.71094, 192.38281)
+            int ui:nodegraph:node:stackingOrder = 40
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["Advanced"]
+        }
+
+        def Shader "Image"
+        {
+            uniform token info:id = "ND_image_color3"
+            color3f inputs:default = (0.57414854, 0.5741624, 0.574155) (
+                colorSpace = "srgb_texture"
+            )
+            asset inputs:file.connect = </Root/DynamicMaterial.inputs:ImageInput>
+            string inputs:filtertype
+            float2 inputs:texcoord
+            string inputs:uaddressmode
+            string inputs:vaddressmode
+            color3f outputs:out
+            float2 ui:nodegraph:node:pos = (-226.85938, 73.61719)
+            int ui:nodegraph:node:stackingOrder = 95
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+        }
+
+        def Shader "UnlitSurface"
+        {
+            uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+            bool inputs:applyPostProcessToneMap = 0
+            color3f inputs:color.connect = </Root/DynamicMaterial/Image.outputs:out>
+            bool inputs:hasPremultipliedAlpha
+            float inputs:opacity
+            float inputs:opacityThreshold
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (135.4414, -92.26172)
+            int ui:nodegraph:node:stackingOrder = 42
+        }
+    }
+}
+
