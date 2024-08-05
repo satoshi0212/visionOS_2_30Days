@@ -15,7 +15,7 @@ X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live)
 | 4 | [Connectable](https://x.com/shmdevelop/status/1816777882716516744) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/539ea696-dcec-4b04-beab-bc96df126d01"> |
 | 5 | [FadeIn, FadeOut](https://x.com/shmdevelop/status/1817817596135362891) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/0ed0b399-0769-4920-8cb0-2e3b7b0bd207"> |
 | 6 | [Video to ShaderGraphMaterial](https://x.com/shmdevelop/status/1818267404486758766) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/61e62c88-b772-4cb4-8fa6-aa6d1b5ba832"> |
-
+| 7 | [Hand Tracking](https://x.com/shmdevelop/status/1820423272116478433) | - |  <img width="600" alt="" src="https://github.com/user-attachments/assets/c6ece2a2-ad18-404b-bde6-29c14fedd698"> |
 
 # Sponsors
 
