@@ -116,6 +116,6 @@ extension MTLTexture {
         return context.createCGImage(flipped,
                                      from: flipped.extent,
                                      format: CIFormat.BGRA8,
-                                     colorSpace: CGColorSpace(name: CGColorSpace.displayP3)!)
+                                     colorSpace: CGColorSpace(name: CGColorSpace.linearDisplayP3)!)
     }
 }
