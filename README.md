@@ -31,5 +31,6 @@ Thanks!
 - https://github.com/hiroyuki
 - https://github.com/longda
 - https://github.com/aerickson14
+- https://github.com/Axxou
 
 [Your support is greatly appreciated! :+1:](https://github.com/sponsors/satoshi0212)
