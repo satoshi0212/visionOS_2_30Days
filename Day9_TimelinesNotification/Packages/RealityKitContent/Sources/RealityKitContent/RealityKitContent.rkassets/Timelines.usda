@@ -1,0 +1,159 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (448.0.5.508.2)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["MainTimeline", "AudioLibrary", "DogBark04", "CarHorn", "Cube_1", "Cube_2"]
+    def RealityKitTimeline "MainTimeline"
+    {
+        uniform token info:id = "986E0C36-8E99-44A0-978A-91A23CF637C1"
+
+        def RealityKitTrack "Track"
+        {
+            reorder nameChildren = ["Notification", "Notification2", "Notification3", "Notification4", "Notification0", "Notification5"]
+            uniform token info:id = "9B50FF0D-6A6B-4997-927B-2997119D3CF0"
+
+            def RealityKitAction "Notification"
+            {
+                string actionKind = "notification"
+                double duration = 0
+                uniform token info:id = "73E145AD-0854-4748-A501-7E61AAAE681F"
+                string notificationName = "NotificationAction_1"
+                double startTime = 1
+                rel target = </Root/Cube_1>
+            }
+
+            def RealityKitAction "Notification2"
+            {
+                string actionKind = "notification"
+                double duration = 0
+                uniform token info:id = "96A3C2CE-167D-4588-A7F9-CAA78E598D6C"
+                string notificationName = "NotificationAction_2"
+                double startTime = 2
+                rel target = </Root/Cube_1>
+            }
+
+            def RealityKitAction "Notification3"
+            {
+                string actionKind = "notification"
+                double duration = 0
+                uniform token info:id = "3538C28C-9766-4474-9352-D333C2CF1844"
+                string notificationName = "NotificationAction_3"
+                double startTime = 3
+                rel target = </Root/Cube_1>
+            }
+
+            def RealityKitAction "Notification5"
+            {
+                string actionKind = "notification"
+                double duration = 0
+                uniform token info:id = "73E145AD-0854-4748-A501-7E61AAAE681F"
+                string notificationName = "NotificationAction_5"
+                double startTime = 5
+                rel target = </Root/Cube_1>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
+            }
+
+            def RealityKitAction "Notification4"
+            {
+                string actionKind = "notification"
+                double duration = 0
+                uniform token info:id = "73E145AD-0854-4748-A501-7E61AAAE681F"
+                string notificationName = "NotificationAction_4"
+                double startTime = 4.000372003496025
+                rel target = </Root/Cube_1>
+                float2 ui:nodegraph:node:pos = (20, 20)
+                int ui:nodegraph:node:stackingOrder = 1
+            }
+
+            def RealityKitAction "Notification0"
+            {
+                string actionKind = "notification"
+                uniform token info:id = "D1C3784A-3890-4690-916A-6C218934D92F"
+                string notificationName = "NotificationAction_0"
+                double startTime = 0
+                rel target = </Root/Cube_1>
+            }
+        }
+    }
+
+    def RealityKitComponent "AudioLibrary"
+    {
+        uniform token info:id = "RealityKit.AudioLibrary"
+
+        def RealityKitDict "resources"
+        {
+            string[] keys = ["DogBark04.usdz", "CarHorn.usdz"]
+            rel values = [
+                </Root/DogBark04>,
+                </Root/CarHorn>,
+            ]
+        }
+    }
+
+    def Cube "Cube_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Cube_1/DefaultMaterial>
+        double size = 0.2
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 1, -1.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Cube_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+        }
+
+        def RealityKitComponent "RCP_BehaviorsContainer"
+        {
+            rel behaviors = </Root/Cube_1/OnTap>
+            uniform token info:id = "RCP.BehaviorsContainer"
+        }
+
+        def Preliminary_Behavior "OnTap"
+        {
+            rel actions = </Root/Cube_1/OnTap/Action>
+            uniform bool exclusive
+            rel triggers = </Root/Cube_1/OnTap/Trigger>
+
+            def Preliminary_Trigger "Trigger"
+            {
+                rel affectedObjects = </Root/Cube_1>
+                token info:id = "TapGesture"
+            }
+
+            def Preliminary_Action "Action"
+            {
+                rel affectedObjects = </Root>
+                rel animationLibraryKey = </Root/MainTimeline>
+                rel animationLibraryKeyOverrideKey = </Root/Cube_1/OnTap/Trigger>
+                token info:id = "PlayTimeline"
+                int loops = 0
+                int performCount = 1
+                token type = "serial"
+            }
+        }
+    }
+}
+
