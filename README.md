@@ -18,6 +18,7 @@ X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live)
 | 7 | [Hand Tracking](https://x.com/shmdevelop/status/1820423272116478433) | - |  <img width="600" alt="" src="https://github.com/user-attachments/assets/c6ece2a2-ad18-404b-bde6-29c14fedd698"> |
 | 8 | [GameplayKit](https://x.com/shmdevelop/status/1820997593771733008) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/1d73c949-816f-4246-9077-f653e6e32304"> |
 | 9 | [Timelines Notification Basic](https://x.com/shmdevelop/status/1848454312437104851) | ✔︎ |  <img width="600" alt="" src="https://github.com/user-attachments/assets/fa4512ff-3c05-4d26-8396-5e167f660046"> |
+| 10 | [Suppress Overlay](https://x.com/shmdevelop/status/1849426840768954520) | -  |  <img width="600" alt="" src="https://github.com/user-attachments/assets/5796f4db-2cbe-47a8-8c30-ea03d8682509"> |
 
 # Sponsors
 
