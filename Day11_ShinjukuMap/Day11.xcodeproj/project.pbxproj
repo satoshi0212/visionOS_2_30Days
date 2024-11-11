@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8ED4772C2CE0DF8E00163C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477222CE0DF8E00163C63 /* Preview Assets.xcassets */; };
+		8ED4772D2CE0DF8E00163C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477252CE0DF8E00163C63 /* Assets.xcassets */; };
+		8ED4772F2CE0DF8E00163C63 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED477242CE0DF8E00163C63 /* AppModel.swift */; };
+		8ED477302CE0DF8E00163C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED477262CE0DF8E00163C63 /* ContentView.swift */; };
+		8ED477312CE0DF8E00163C63 /* Day11App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED477272CE0DF8E00163C63 /* Day11App.swift */; };
+		8ED477322CE0DF8E00163C63 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED477282CE0DF8E00163C63 /* ImmersiveView.swift */; };
+		8ED477332CE0DF8E00163C63 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4772A2CE0DF8E00163C63 /* ToggleImmersiveSpaceButton.swift */; };
+		8ED477352CE0EA8C00163C63 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED477342CE0EA8C00163C63 /* ViewModel.swift */; };
+		8ED4775E2CE0EE6000163C63 /* ShinjukuTerminal_B2_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477562CE0EE6000163C63 /* ShinjukuTerminal_B2_Floor.geojson */; };
+		8ED4775F2CE0EE6000163C63 /* ShinjukuTerminal_0_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4773D2CE0EE6000163C63 /* ShinjukuTerminal_0_Space.geojson */; };
+		8ED477602CE0EE6000163C63 /* ShinjukuTerminal_3out_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4774B2CE0EE6000163C63 /* ShinjukuTerminal_3out_Space.geojson */; };
+		8ED477612CE0EE6000163C63 /* ShinjukuTerminal_B3_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477582CE0EE6000163C63 /* ShinjukuTerminal_B3_Fixture.geojson */; };
+		8ED477622CE0EE6000163C63 /* ShinjukuTerminal_4_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4774E2CE0EE6000163C63 /* ShinjukuTerminal_4_Space.geojson */; };
+		8ED477632CE0EE6000163C63 /* ShinjukuTerminal_1_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4773F2CE0EE6000163C63 /* ShinjukuTerminal_1_Space.geojson */; };
+		8ED477642CE0EE6000163C63 /* ShinjukuTerminal_B1_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477532CE0EE6000163C63 /* ShinjukuTerminal_B1_Floor.geojson */; };
+		8ED477652CE0EE6000163C63 /* ShinjukuTerminal_2out_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477442CE0EE6000163C63 /* ShinjukuTerminal_2out_Floor.geojson */; };
+		8ED477662CE0EE6000163C63 /* ShinjukuTerminal_4out_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4774F2CE0EE6000163C63 /* ShinjukuTerminal_4out_Fixture.geojson */; };
+		8ED477672CE0EE6000163C63 /* ShinjukuTerminal_4out_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477512CE0EE6000163C63 /* ShinjukuTerminal_4out_Space.geojson */; };
+		8ED477682CE0EE6000163C63 /* ShinjukuTerminal_3_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477462CE0EE6000163C63 /* ShinjukuTerminal_3_Fixture.geojson */; };
+		8ED477692CE0EE6000163C63 /* ShinjukuTerminal_2_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477422CE0EE6000163C63 /* ShinjukuTerminal_2_Space.geojson */; };
+		8ED4776A2CE0EE6000163C63 /* ShinjukuTerminal_4out_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477502CE0EE6000163C63 /* ShinjukuTerminal_4out_Floor.geojson */; };
+		8ED4776B2CE0EE6000163C63 /* ShinjukuTerminal_3out_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477492CE0EE6000163C63 /* ShinjukuTerminal_3out_Fixture.geojson */; };
+		8ED4776C2CE0EE6000163C63 /* ShinjukuTerminal_2out_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477432CE0EE6000163C63 /* ShinjukuTerminal_2out_Fixture.geojson */; };
+		8ED4776D2CE0EE6000163C63 /* ShinjukuTerminal_0_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4773C2CE0EE6000163C63 /* ShinjukuTerminal_0_Floor.geojson */; };
+		8ED4776E2CE0EE6000163C63 /* ShinjukuTerminal_B3_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477592CE0EE6000163C63 /* ShinjukuTerminal_B3_Floor.geojson */; };
+		8ED4776F2CE0EE6000163C63 /* ShinjukuTerminal_0_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4773B2CE0EE6000163C63 /* ShinjukuTerminal_0_Fixture.geojson */; };
+		8ED477702CE0EE6000163C63 /* ShinjukuTerminal_2_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477402CE0EE6000163C63 /* ShinjukuTerminal_2_Fixture.geojson */; };
+		8ED477732CE0EE6000163C63 /* ShinjukuTerminal_4_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4774C2CE0EE6000163C63 /* ShinjukuTerminal_4_Fixture.geojson */; };
+		8ED477742CE0EE6000163C63 /* ShinjukuTerminal_1_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4773E2CE0EE6000163C63 /* ShinjukuTerminal_1_Floor.geojson */; };
+		8ED477752CE0EE6000163C63 /* ShinjukuTerminal_B1_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477522CE0EE6000163C63 /* ShinjukuTerminal_B1_Fixture.geojson */; };
+		8ED477762CE0EE6000163C63 /* ShinjukuTerminal_B3_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4775A2CE0EE6000163C63 /* ShinjukuTerminal_B3_Space.geojson */; };
+		8ED477772CE0EE6000163C63 /* ShinjukuTerminal_2out_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477452CE0EE6000163C63 /* ShinjukuTerminal_2out_Space.geojson */; };
+		8ED477782CE0EE6000163C63 /* ShinjukuTerminal_3_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477482CE0EE6000163C63 /* ShinjukuTerminal_3_Space.geojson */; };
+		8ED477792CE0EE6000163C63 /* ShinjukuTerminal_B2_Fixture.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477552CE0EE6000163C63 /* ShinjukuTerminal_B2_Fixture.geojson */; };
+		8ED4777A2CE0EE6000163C63 /* ShinjukuTerminal_B2_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477572CE0EE6000163C63 /* ShinjukuTerminal_B2_Space.geojson */; };
+		8ED4777B2CE0EE6000163C63 /* ShinjukuTerminal_B1_Space.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477542CE0EE6000163C63 /* ShinjukuTerminal_B1_Space.geojson */; };
+		8ED4777C2CE0EE6000163C63 /* ShinjukuTerminal_3_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477472CE0EE6000163C63 /* ShinjukuTerminal_3_Floor.geojson */; };
+		8ED4777D2CE0EE6000163C63 /* ShinjukuTerminal_4_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4774D2CE0EE6000163C63 /* ShinjukuTerminal_4_Floor.geojson */; };
+		8ED4777E2CE0EE6000163C63 /* ShinjukuTerminal_3out_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED4774A2CE0EE6000163C63 /* ShinjukuTerminal_3out_Floor.geojson */; };
+		8ED4777F2CE0EE6000163C63 /* ShinjukuTerminal_2_Floor.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8ED477412CE0EE6000163C63 /* ShinjukuTerminal_2_Floor.geojson */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8ED477052CE0DF8000163C63 /* Day11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day11.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED477222CE0DF8E00163C63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8ED477242CE0DF8E00163C63 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		8ED477252CE0DF8E00163C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8ED477262CE0DF8E00163C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8ED477272CE0DF8E00163C63 /* Day11App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11App.swift; sourceTree = "<group>"; };
+		8ED477282CE0DF8E00163C63 /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		8ED477292CE0DF8E00163C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ED4772A2CE0DF8E00163C63 /* ToggleImmersiveSpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleImmersiveSpaceButton.swift; sourceTree = "<group>"; };
+		8ED477342CE0EA8C00163C63 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8ED4773B2CE0EE6000163C63 /* ShinjukuTerminal_0_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_0_Fixture.geojson; sourceTree = "<group>"; };
+		8ED4773C2CE0EE6000163C63 /* ShinjukuTerminal_0_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_0_Floor.geojson; sourceTree = "<group>"; };
+		8ED4773D2CE0EE6000163C63 /* ShinjukuTerminal_0_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_0_Space.geojson; sourceTree = "<group>"; };
+		8ED4773E2CE0EE6000163C63 /* ShinjukuTerminal_1_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_1_Floor.geojson; sourceTree = "<group>"; };
+		8ED4773F2CE0EE6000163C63 /* ShinjukuTerminal_1_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_1_Space.geojson; sourceTree = "<group>"; };
+		8ED477402CE0EE6000163C63 /* ShinjukuTerminal_2_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_2_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477412CE0EE6000163C63 /* ShinjukuTerminal_2_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_2_Floor.geojson; sourceTree = "<group>"; };
+		8ED477422CE0EE6000163C63 /* ShinjukuTerminal_2_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_2_Space.geojson; sourceTree = "<group>"; };
+		8ED477432CE0EE6000163C63 /* ShinjukuTerminal_2out_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_2out_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477442CE0EE6000163C63 /* ShinjukuTerminal_2out_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_2out_Floor.geojson; sourceTree = "<group>"; };
+		8ED477452CE0EE6000163C63 /* ShinjukuTerminal_2out_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_2out_Space.geojson; sourceTree = "<group>"; };
+		8ED477462CE0EE6000163C63 /* ShinjukuTerminal_3_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_3_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477472CE0EE6000163C63 /* ShinjukuTerminal_3_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_3_Floor.geojson; sourceTree = "<group>"; };
+		8ED477482CE0EE6000163C63 /* ShinjukuTerminal_3_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_3_Space.geojson; sourceTree = "<group>"; };
+		8ED477492CE0EE6000163C63 /* ShinjukuTerminal_3out_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_3out_Fixture.geojson; sourceTree = "<group>"; };
+		8ED4774A2CE0EE6000163C63 /* ShinjukuTerminal_3out_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_3out_Floor.geojson; sourceTree = "<group>"; };
+		8ED4774B2CE0EE6000163C63 /* ShinjukuTerminal_3out_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_3out_Space.geojson; sourceTree = "<group>"; };
+		8ED4774C2CE0EE6000163C63 /* ShinjukuTerminal_4_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_4_Fixture.geojson; sourceTree = "<group>"; };
+		8ED4774D2CE0EE6000163C63 /* ShinjukuTerminal_4_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_4_Floor.geojson; sourceTree = "<group>"; };
+		8ED4774E2CE0EE6000163C63 /* ShinjukuTerminal_4_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_4_Space.geojson; sourceTree = "<group>"; };
+		8ED4774F2CE0EE6000163C63 /* ShinjukuTerminal_4out_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_4out_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477502CE0EE6000163C63 /* ShinjukuTerminal_4out_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_4out_Floor.geojson; sourceTree = "<group>"; };
+		8ED477512CE0EE6000163C63 /* ShinjukuTerminal_4out_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_4out_Space.geojson; sourceTree = "<group>"; };
+		8ED477522CE0EE6000163C63 /* ShinjukuTerminal_B1_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B1_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477532CE0EE6000163C63 /* ShinjukuTerminal_B1_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B1_Floor.geojson; sourceTree = "<group>"; };
+		8ED477542CE0EE6000163C63 /* ShinjukuTerminal_B1_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B1_Space.geojson; sourceTree = "<group>"; };
+		8ED477552CE0EE6000163C63 /* ShinjukuTerminal_B2_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B2_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477562CE0EE6000163C63 /* ShinjukuTerminal_B2_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B2_Floor.geojson; sourceTree = "<group>"; };
+		8ED477572CE0EE6000163C63 /* ShinjukuTerminal_B2_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B2_Space.geojson; sourceTree = "<group>"; };
+		8ED477582CE0EE6000163C63 /* ShinjukuTerminal_B3_Fixture.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B3_Fixture.geojson; sourceTree = "<group>"; };
+		8ED477592CE0EE6000163C63 /* ShinjukuTerminal_B3_Floor.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B3_Floor.geojson; sourceTree = "<group>"; };
+		8ED4775A2CE0EE6000163C63 /* ShinjukuTerminal_B3_Space.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShinjukuTerminal_B3_Space.geojson; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8ED477022CE0DF8000163C63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8ED476FC2CE0DF8000163C63 = {
+			isa = PBXGroup;
+			children = (
+				8ED4772B2CE0DF8E00163C63 /* Day11 */,
+				8ED477062CE0DF8000163C63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8ED477062CE0DF8000163C63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8ED477052CE0DF8000163C63 /* Day11.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8ED477232CE0DF8E00163C63 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8ED477222CE0DF8E00163C63 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8ED4772B2CE0DF8E00163C63 /* Day11 */ = {
+			isa = PBXGroup;
+			children = (
+				8ED477272CE0DF8E00163C63 /* Day11App.swift */,
+				8ED477372CE0EAB200163C63 /* Views */,
+				8ED477362CE0EAAB00163C63 /* Models */,
+				8ED4775C2CE0EE6000163C63 /* Resources */,
+				8ED477292CE0DF8E00163C63 /* Info.plist */,
+				8ED477252CE0DF8E00163C63 /* Assets.xcassets */,
+				8ED477232CE0DF8E00163C63 /* Preview Content */,
+			);
+			path = Day11;
+			sourceTree = "<group>";
+		};
+		8ED477362CE0EAAB00163C63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8ED477242CE0DF8E00163C63 /* AppModel.swift */,
+				8ED477342CE0EA8C00163C63 /* ViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8ED477372CE0EAB200163C63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8ED477262CE0DF8E00163C63 /* ContentView.swift */,
+				8ED477282CE0DF8E00163C63 /* ImmersiveView.swift */,
+				8ED4772A2CE0DF8E00163C63 /* ToggleImmersiveSpaceButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8ED4775B2CE0EE6000163C63 /* geojson */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4773B2CE0EE6000163C63 /* ShinjukuTerminal_0_Fixture.geojson */,
+				8ED4773C2CE0EE6000163C63 /* ShinjukuTerminal_0_Floor.geojson */,
+				8ED4773D2CE0EE6000163C63 /* ShinjukuTerminal_0_Space.geojson */,
+				8ED4773E2CE0EE6000163C63 /* ShinjukuTerminal_1_Floor.geojson */,
+				8ED4773F2CE0EE6000163C63 /* ShinjukuTerminal_1_Space.geojson */,
+				8ED477402CE0EE6000163C63 /* ShinjukuTerminal_2_Fixture.geojson */,
+				8ED477412CE0EE6000163C63 /* ShinjukuTerminal_2_Floor.geojson */,
+				8ED477422CE0EE6000163C63 /* ShinjukuTerminal_2_Space.geojson */,
+				8ED477432CE0EE6000163C63 /* ShinjukuTerminal_2out_Fixture.geojson */,
+				8ED477442CE0EE6000163C63 /* ShinjukuTerminal_2out_Floor.geojson */,
+				8ED477452CE0EE6000163C63 /* ShinjukuTerminal_2out_Space.geojson */,
+				8ED477462CE0EE6000163C63 /* ShinjukuTerminal_3_Fixture.geojson */,
+				8ED477472CE0EE6000163C63 /* ShinjukuTerminal_3_Floor.geojson */,
+				8ED477482CE0EE6000163C63 /* ShinjukuTerminal_3_Space.geojson */,
+				8ED477492CE0EE6000163C63 /* ShinjukuTerminal_3out_Fixture.geojson */,
+				8ED4774A2CE0EE6000163C63 /* ShinjukuTerminal_3out_Floor.geojson */,
+				8ED4774B2CE0EE6000163C63 /* ShinjukuTerminal_3out_Space.geojson */,
+				8ED4774C2CE0EE6000163C63 /* ShinjukuTerminal_4_Fixture.geojson */,
+				8ED4774D2CE0EE6000163C63 /* ShinjukuTerminal_4_Floor.geojson */,
+				8ED4774E2CE0EE6000163C63 /* ShinjukuTerminal_4_Space.geojson */,
+				8ED4774F2CE0EE6000163C63 /* ShinjukuTerminal_4out_Fixture.geojson */,
+				8ED477502CE0EE6000163C63 /* ShinjukuTerminal_4out_Floor.geojson */,
+				8ED477512CE0EE6000163C63 /* ShinjukuTerminal_4out_Space.geojson */,
+				8ED477522CE0EE6000163C63 /* ShinjukuTerminal_B1_Fixture.geojson */,
+				8ED477532CE0EE6000163C63 /* ShinjukuTerminal_B1_Floor.geojson */,
+				8ED477542CE0EE6000163C63 /* ShinjukuTerminal_B1_Space.geojson */,
+				8ED477552CE0EE6000163C63 /* ShinjukuTerminal_B2_Fixture.geojson */,
+				8ED477562CE0EE6000163C63 /* ShinjukuTerminal_B2_Floor.geojson */,
+				8ED477572CE0EE6000163C63 /* ShinjukuTerminal_B2_Space.geojson */,
+				8ED477582CE0EE6000163C63 /* ShinjukuTerminal_B3_Fixture.geojson */,
+				8ED477592CE0EE6000163C63 /* ShinjukuTerminal_B3_Floor.geojson */,
+				8ED4775A2CE0EE6000163C63 /* ShinjukuTerminal_B3_Space.geojson */,
+			);
+			path = geojson;
+			sourceTree = "<group>";
+		};
+		8ED4775C2CE0EE6000163C63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8ED4775B2CE0EE6000163C63 /* geojson */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8ED477042CE0DF8000163C63 /* Day11 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED4771D2CE0DF8100163C63 /* Build configuration list for PBXNativeTarget "Day11" */;
+			buildPhases = (
+				8ED477012CE0DF8000163C63 /* Sources */,
+				8ED477022CE0DF8000163C63 /* Frameworks */,
+				8ED477032CE0DF8000163C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Day11;
+			packageProductDependencies = (
+			);
+			productName = Day11;
+			productReference = 8ED477052CE0DF8000163C63 /* Day11.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8ED476FD2CE0DF8000163C63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					8ED477042CE0DF8000163C63 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = 8ED477002CE0DF8000163C63 /* Build configuration list for PBXProject "Day11" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8ED476FC2CE0DF8000163C63;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8ED477062CE0DF8000163C63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8ED477042CE0DF8000163C63 /* Day11 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8ED477032CE0DF8000163C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED4775E2CE0EE6000163C63 /* ShinjukuTerminal_B2_Floor.geojson in Resources */,
+				8ED4775F2CE0EE6000163C63 /* ShinjukuTerminal_0_Space.geojson in Resources */,
+				8ED477602CE0EE6000163C63 /* ShinjukuTerminal_3out_Space.geojson in Resources */,
+				8ED477612CE0EE6000163C63 /* ShinjukuTerminal_B3_Fixture.geojson in Resources */,
+				8ED477622CE0EE6000163C63 /* ShinjukuTerminal_4_Space.geojson in Resources */,
+				8ED477632CE0EE6000163C63 /* ShinjukuTerminal_1_Space.geojson in Resources */,
+				8ED477642CE0EE6000163C63 /* ShinjukuTerminal_B1_Floor.geojson in Resources */,
+				8ED477652CE0EE6000163C63 /* ShinjukuTerminal_2out_Floor.geojson in Resources */,
+				8ED477662CE0EE6000163C63 /* ShinjukuTerminal_4out_Fixture.geojson in Resources */,
+				8ED477672CE0EE6000163C63 /* ShinjukuTerminal_4out_Space.geojson in Resources */,
+				8ED477682CE0EE6000163C63 /* ShinjukuTerminal_3_Fixture.geojson in Resources */,
+				8ED477692CE0EE6000163C63 /* ShinjukuTerminal_2_Space.geojson in Resources */,
+				8ED4776A2CE0EE6000163C63 /* ShinjukuTerminal_4out_Floor.geojson in Resources */,
+				8ED4776B2CE0EE6000163C63 /* ShinjukuTerminal_3out_Fixture.geojson in Resources */,
+				8ED4776C2CE0EE6000163C63 /* ShinjukuTerminal_2out_Fixture.geojson in Resources */,
+				8ED4776D2CE0EE6000163C63 /* ShinjukuTerminal_0_Floor.geojson in Resources */,
+				8ED4776E2CE0EE6000163C63 /* ShinjukuTerminal_B3_Floor.geojson in Resources */,
+				8ED4776F2CE0EE6000163C63 /* ShinjukuTerminal_0_Fixture.geojson in Resources */,
+				8ED477702CE0EE6000163C63 /* ShinjukuTerminal_2_Fixture.geojson in Resources */,
+				8ED477732CE0EE6000163C63 /* ShinjukuTerminal_4_Fixture.geojson in Resources */,
+				8ED477742CE0EE6000163C63 /* ShinjukuTerminal_1_Floor.geojson in Resources */,
+				8ED477752CE0EE6000163C63 /* ShinjukuTerminal_B1_Fixture.geojson in Resources */,
+				8ED477762CE0EE6000163C63 /* ShinjukuTerminal_B3_Space.geojson in Resources */,
+				8ED477772CE0EE6000163C63 /* ShinjukuTerminal_2out_Space.geojson in Resources */,
+				8ED477782CE0EE6000163C63 /* ShinjukuTerminal_3_Space.geojson in Resources */,
+				8ED477792CE0EE6000163C63 /* ShinjukuTerminal_B2_Fixture.geojson in Resources */,
+				8ED4777A2CE0EE6000163C63 /* ShinjukuTerminal_B2_Space.geojson in Resources */,
+				8ED4777B2CE0EE6000163C63 /* ShinjukuTerminal_B1_Space.geojson in Resources */,
+				8ED4777C2CE0EE6000163C63 /* ShinjukuTerminal_3_Floor.geojson in Resources */,
+				8ED4777D2CE0EE6000163C63 /* ShinjukuTerminal_4_Floor.geojson in Resources */,
+				8ED4777E2CE0EE6000163C63 /* ShinjukuTerminal_3out_Floor.geojson in Resources */,
+				8ED4777F2CE0EE6000163C63 /* ShinjukuTerminal_2_Floor.geojson in Resources */,
+				8ED4772C2CE0DF8E00163C63 /* Preview Assets.xcassets in Resources */,
+				8ED4772D2CE0DF8E00163C63 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8ED477012CE0DF8000163C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED4772F2CE0DF8E00163C63 /* AppModel.swift in Sources */,
+				8ED477302CE0DF8E00163C63 /* ContentView.swift in Sources */,
+				8ED477312CE0DF8E00163C63 /* Day11App.swift in Sources */,
+				8ED477322CE0DF8E00163C63 /* ImmersiveView.swift in Sources */,
+				8ED477352CE0EA8C00163C63 /* ViewModel.swift in Sources */,
+				8ED477332CE0DF8E00163C63 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8ED4771E2CE0DF8100163C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Day11/Preview Content\"";
+				DEVELOPMENT_TEAM = 247V527KAQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tokyo.shmdevelopment.Day11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		8ED4771F2CE0DF8100163C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Day11/Preview Content\"";
+				DEVELOPMENT_TEAM = 247V527KAQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tokyo.shmdevelopment.Day11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		8ED477202CE0DF8100163C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		8ED477212CE0DF8100163C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8ED477002CE0DF8000163C63 /* Build configuration list for PBXProject "Day11" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED477202CE0DF8100163C63 /* Debug */,
+				8ED477212CE0DF8100163C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ED4771D2CE0DF8100163C63 /* Build configuration list for PBXNativeTarget "Day11" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED4771E2CE0DF8100163C63 /* Debug */,
+				8ED4771F2CE0DF8100163C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8ED476FD2CE0DF8000163C63 /* Project object */;
+}
