@@ -22,6 +22,7 @@ X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live)
 | 9 | [Timelines Notification Basic](https://x.com/shmdevelop/status/1848454312437104851) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/fa4512ff-3c05-4d26-8396-5e167f660046"> |
 | 10 | [Suppress Overlay](https://x.com/shmdevelop/status/1849426840768954520) | - | <img width="600" alt="" src="https://github.com/user-attachments/assets/5796f4db-2cbe-47a8-8c30-ea03d8682509"> |
 | 11 | [Shinjuku GeoJSON Map](https://x.com/shmdevelop/status/1855921159235092819) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/a38aa8de-d68c-4696-a952-d11e5366144e"> |
+| 12 | [Pitch Detection](https://x.com/shmdevelop/status/1858078788896092626) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/9801ed78-a549-4f82-94ba-33c40bc6fa77"> |
 
 # Sponsors
 
