@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Basic Stream",
+        "playlist_url":"https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8",
+    },
+    {
+        "name":"Advanced Stream",
+        "playlist_url":"https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
+    },
+    {
+        "name":"My Stream",
+        "playlist_url":"https://satoshi0212.github.io/hls/resources/index.m3u8",
+    },
+]
