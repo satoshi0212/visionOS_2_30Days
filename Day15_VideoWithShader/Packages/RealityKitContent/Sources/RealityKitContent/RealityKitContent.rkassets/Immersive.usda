@@ -1,0 +1,284 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Sphere_Left", "Sphere_Right", "GridMaterial"]
+    def Material "DynamicMaterial"
+    {
+        float inputs:HueRange = 0 (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (448.26694, 759.5949)
+                    int stackingOrderInSubgraph = 4196
+                }
+            }
+        )
+        asset inputs:ImageInput (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (-947.699, 414.56952)
+                    int stackingOrderInSubgraph = 4222
+                }
+            }
+        )
+        color4f inputs:KeyColor = (0, 0, 0, 0) (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (-514.746, 1024.952)
+                    int stackingOrderInSubgraph = 4076
+                }
+            }
+        )
+        float inputs:SaturateRange = 0 (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (449.78134, 990.7402)
+                    int stackingOrderInSubgraph = 4196
+                }
+            }
+        )
+        float inputs:ValueRange = 0 (
+            customData = {
+                dictionary realitykit = {
+                    float2 positionInSubgraph = (456.7724, 1182.6367)
+                    int stackingOrderInSubgraph = 4196
+                }
+            }
+        )
+        token outputs:mtlx:surface.connect = </Root/DynamicMaterial/UnlitSurface.outputs:out>
+        token outputs:realitykit:vertex
+        float2 ui:nodegraph:node:pos = (48.214767, 197.62794)
+        int ui:nodegraph:node:stackingOrder = 1
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1584.1929, 814.11194)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 4071
+
+        def Shader "UnlitSurface"
+        {
+            uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+            bool inputs:applyPostProcessToneMap = 1
+            color3f inputs:color.connect = </Root/DynamicMaterial/Combine3.outputs:out>
+            bool inputs:hasPremultipliedAlpha = 0
+            float inputs:opacity.connect = </Root/DynamicMaterial/AdditiveMix_3.outputs:out>
+            float inputs:opacityThreshold
+            token outputs:out
+            float2 ui:nodegraph:node:pos = (1329.9553, 772.49756)
+            int ui:nodegraph:node:stackingOrder = 3382
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:applyPostProcessToneMap", "inputs:opacityThreshold"]
+        }
+
+        def Shader "Separate4_1"
+        {
+            uniform token info:id = "ND_separate4_color4"
+            color4f inputs:in.connect = </Root/DynamicMaterial/Dot.outputs:out>
+            float outputs:outa
+            float outputs:outb
+            float outputs:outg
+            float outputs:outr
+            float2 ui:nodegraph:node:pos = (605.8191, 530.82153)
+            int ui:nodegraph:node:stackingOrder = 3110
+        }
+
+        def Shader "Combine3"
+        {
+            uniform token info:id = "ND_combine3_color3"
+            float inputs:in1.connect = </Root/DynamicMaterial/Separate4_1.outputs:outr>
+            float inputs:in2.connect = </Root/DynamicMaterial/Separate4_1.outputs:outg>
+            float inputs:in3.connect = </Root/DynamicMaterial/Separate4_1.outputs:outb>
+            color3f outputs:out
+            float2 ui:nodegraph:node:pos = (786.0004, 525.65765)
+            int ui:nodegraph:node:stackingOrder = 3680
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
+        }
+
+        def Shader "Image"
+        {
+            uniform token info:id = "ND_image_color4"
+            color4f inputs:default
+            asset inputs:file.connect = </Root/DynamicMaterial.inputs:ImageInput>
+            string inputs:filtertype
+            float2 inputs:texcoord
+            string inputs:uaddressmode
+            string inputs:vaddressmode
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-762.9572, 445.78336)
+            int ui:nodegraph:node:stackingOrder = 4220
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out", "inputs:vaddressmode"]
+        }
+
+        def Shader "RGBToHSV_1"
+        {
+            uniform token info:id = "ND_rgbtohsv_color4"
+            color4f inputs:in.connect = </Root/DynamicMaterial/Dot.outputs:out>
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-370.38202, 829.335)
+            int ui:nodegraph:node:stackingOrder = 2645
+        }
+
+        def Shader "Dot"
+        {
+            uniform token info:id = "ND_dot_color4"
+            color4f inputs:in.connect = </Root/DynamicMaterial/Image.outputs:out>
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-568.6097, 525.6207)
+            int ui:nodegraph:node:stackingOrder = 2358
+        }
+
+        def Shader "ConstantColor4"
+        {
+            uniform token info:id = "ND_constant_color4"
+            color4f inputs:value = (0.2627451, 0.52156866, 0.2901961, 1) (
+                colorSpace = "lin_srgb"
+            )
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-537.4897, 1092.5037)
+            int ui:nodegraph:node:stackingOrder = 4221
+        }
+
+        def Shader "Subtract_1"
+        {
+            uniform token info:id = "ND_subtract_color4"
+            color4f inputs:in1.connect = </Root/DynamicMaterial/RGBToHSV_1.outputs:out>
+            color4f inputs:in2.connect = </Root/DynamicMaterial/RGBToHSV_2.outputs:out>
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-147.43831, 923.52704)
+            int ui:nodegraph:node:stackingOrder = 2833
+        }
+
+        def Shader "RGBToHSV_2"
+        {
+            uniform token info:id = "ND_rgbtohsv_color4"
+            color4f inputs:in.connect = </Root/DynamicMaterial/ConstantColor4.outputs:out>
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-316.72766, 1025.6093)
+            int ui:nodegraph:node:stackingOrder = 2821
+        }
+
+        def Shader "Separate4_3"
+        {
+            uniform token info:id = "ND_separate4_color4"
+            color4f inputs:in.connect = </Root/DynamicMaterial/Abs.outputs:out>
+            float outputs:outa
+            float outputs:outb
+            float outputs:outg
+            float outputs:outr
+            float2 ui:nodegraph:node:pos = (160.16693, 927.0921)
+            int ui:nodegraph:node:stackingOrder = 3666
+        }
+
+        def Shader "Abs"
+        {
+            uniform token info:id = "ND_absval_color4"
+            color4f inputs:in.connect = </Root/DynamicMaterial/Subtract_1.outputs:out>
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-28.23919, 927.0772)
+            int ui:nodegraph:node:stackingOrder = 3656
+        }
+
+        def Shader "IfGreaterOrEqual_5"
+        {
+            uniform token info:id = "ND_ifgreatereq_float"
+            float inputs:in1 = 1
+            float inputs:in2 = 0
+            float inputs:value1.connect = </Root/DynamicMaterial/Separate4_3.outputs:outb>
+            float inputs:value2 = 0.03
+            float inputs:value2.connect = </Root/DynamicMaterial.inputs:ValueRange>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (638.90216, 1183.574)
+            int ui:nodegraph:node:stackingOrder = 4196
+        }
+
+        def Shader "AdditiveMix_2"
+        {
+            uniform token info:id = "ND_plus_float"
+            float inputs:bg.connect = </Root/DynamicMaterial/IfGreaterOrEqual_4.outputs:out>
+            float inputs:fg.connect = </Root/DynamicMaterial/IfGreaterOrEqual_3.outputs:out>
+            float inputs:mix
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (866.6584, 865.994)
+            int ui:nodegraph:node:stackingOrder = 4196
+        }
+
+        def Shader "AdditiveMix_3"
+        {
+            uniform token info:id = "ND_plus_float"
+            float inputs:bg.connect = </Root/DynamicMaterial/IfGreaterOrEqual_5.outputs:out>
+            float inputs:fg.connect = </Root/DynamicMaterial/AdditiveMix_2.outputs:out>
+            float inputs:mix
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (1092.7496, 930.92126)
+            int ui:nodegraph:node:stackingOrder = 4196
+        }
+
+        def Shader "IfGreaterOrEqual_3"
+        {
+            uniform token info:id = "ND_ifgreatereq_float"
+            float inputs:in1 = 1
+            float inputs:in2 = 0
+            float inputs:value1.connect = </Root/DynamicMaterial/Separate4_3.outputs:outr>
+            float inputs:value2 = 0.03
+            float inputs:value2.connect = </Root/DynamicMaterial.inputs:HueRange>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (628.2419, 746.79626)
+            int ui:nodegraph:node:stackingOrder = 4196
+        }
+
+        def Shader "IfGreaterOrEqual_4"
+        {
+            uniform token info:id = "ND_ifgreatereq_float"
+            float inputs:in1 = 1
+            float inputs:in2 = 0
+            float inputs:value1.connect = </Root/DynamicMaterial/Separate4_3.outputs:outg>
+            float inputs:value2 = 0.03
+            float inputs:value2.connect = </Root/DynamicMaterial.inputs:SaturateRange>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (637.1208, 976.3197)
+            int ui:nodegraph:node:stackingOrder = 4196
+        }
+
+        def Shader "Image_test"
+        {
+            uniform token info:id = "ND_image_color4"
+            asset inputs:file = @image1.png@
+            string inputs:filtertype
+            string inputs:uaddressmode
+            string inputs:vaddressmode
+            color4f outputs:out
+            float2 ui:nodegraph:node:pos = (-801.2622, 764.85187)
+            int ui:nodegraph:node:stackingOrder = 4200
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:filtertype"]
+        }
+
+        def Shader "ConstantFloat"
+        {
+            uniform token info:id = "ND_constant_float"
+            float inputs:value = 0.06
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (423.54724, 822.3635)
+            int ui:nodegraph:node:stackingOrder = 4226
+        }
+
+        def Shader "ConstantFloat_1"
+        {
+            uniform token info:id = "ND_constant_float"
+            float inputs:value = 0.5
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (435.35284, 1054.6329)
+            int ui:nodegraph:node:stackingOrder = 4223
+        }
+
+        def Shader "ConstantFloat_2"
+        {
+            uniform token info:id = "ND_constant_float"
+            float inputs:value = 0.48
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (432.20813, 1246.4655)
+            int ui:nodegraph:node:stackingOrder = 4225
+        }
+    }
+}
+
