@@ -1,0 +1,69 @@
+{
+  "735C20A6-33B8-48C9-B6CD-A8C8E629364B" : {
+    "objectMetadataList" : [
+      [
+        "735C20A6-33B8-48C9-B6CD-A8C8E629364B",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "B48ABD25-78AF-44CB-8D3F-C2DDB8D3D90B" : {
+    "objectMetadataList" : [
+      [
+        "B48ABD25-78AF-44CB-8D3F-C2DDB8D3D90B",
+        "Root",
+        "WaterPlane"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B48ABD25-78AF-44CB-8D3F-C2DDB8D3D90B",
+        "Root",
+        "MeadowDemo_v2"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "C6A7F375-BFE9-46E0-9EA6-1A6B150F43FD" : {
+    "objectMetadataList" : [
+      [
+        "C6A7F375-BFE9-46E0-9EA6-1A6B150F43FD",
+        "Root"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "C6A7F375-BFE9-46E0-9EA6-1A6B150F43FD",
+        "Root",
+        "SkyDome"
+      ],
+      {
+        "disallowsFraming" : true,
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "C6A7F375-BFE9-46E0-9EA6-1A6B150F43FD",
+        "Root",
+        "Video_Dock"
+      ],
+      {
+        "disallowsFraming" : false,
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  }
+}

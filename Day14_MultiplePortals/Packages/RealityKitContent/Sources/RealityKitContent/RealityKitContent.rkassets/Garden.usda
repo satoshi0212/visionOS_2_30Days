@@ -1,0 +1,597 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["WaterPlane", "MeadowDemo_v2"]
+    def "MeadowDemo_v2" (
+        active = true
+        references = @Geometry/MeadowDemo_v2/MeadowDemo_v2.usdc@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Looks"
+        {
+            over "Meadow_L1_foliageSG"
+            {
+                token outputs:realitykit:vertex
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1051.75, 90.5)
+                float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+
+                over "Meadow_L1_foliage"
+                {
+                    float2 ui:nodegraph:node:pos = (803.75, 90.5)
+                    float2 ui:nodegraph:node:size = (194.5, 181)
+                }
+
+                over "file46"
+                {
+                    float2 ui:nodegraph:node:pos = (309.25, 160)
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                }
+
+                over "place2dTexture46"
+                {
+                    float2 ui:nodegraph:node:pos = (87.5, 160)
+                    float2 ui:nodegraph:node:size = (175, 127)
+                }
+
+                over "file46_swizzle_a"
+                {
+                    float2 ui:nodegraph:node:pos = (545, 60.5)
+                    float2 ui:nodegraph:node:size = (189.5, 53)
+                }
+
+                over "file46_swizzle_rgb"
+                {
+                    float2 ui:nodegraph:node:pos = (545, 173.5)
+                    float2 ui:nodegraph:node:size = (203, 53)
+                }
+            }
+        }
+    }
+
+    def "WaterPlane" (
+        active = true
+        references = @Geometry/WaterPlane/WaterPlane.usdc@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+
+        over "Looks"
+        {
+            over "WaterRipple_mat"
+            {
+                float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+
+                over "UnlitSurface"
+                {
+                    float2 ui:nodegraph:node:size = (194.5, 181)
+                }
+
+                over "Image_4"
+                {
+                    string inputs:filtertype = "cubic"
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                    int ui:nodegraph:node:stackingOrder = 6851
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:default", "inputs:texcoord", "inputs:texcoord", "inputs:texcoord", "outputs:out", "inputs:uaddressmode"]
+                }
+
+                over "Multiply_9"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Add_3"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Add_4"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Texcoord_3"
+                {
+                    float2 ui:nodegraph:node:size = (180.5, 53)
+                }
+
+                over "Multiply_14"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Add_5"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Add_11"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Swizzle_3"
+                {
+                    float2 ui:nodegraph:node:size = (148.5, 53)
+                }
+
+                over "Multiply_12"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Dot"
+                {
+                    float2 ui:nodegraph:node:size = (44, 18)
+                }
+
+                over "Multiply_7"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Multiply_1"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Contrast_1"
+                {
+                    float2 ui:nodegraph:node:size = (118.5, 145)
+                }
+
+                over "Oneminus"
+                {
+                    float2 ui:nodegraph:node:size = (158, 109)
+                }
+
+                over "Swizzle_2"
+                {
+                    float2 ui:nodegraph:node:size = (149, 53)
+                }
+
+                over "Multiply_3"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Add_8"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Time_1"
+                {
+                    float2 ui:nodegraph:node:size = (122.5, 53)
+                }
+
+                over "Dot_1"
+                {
+                    float2 ui:nodegraph:node:size = (44, 18)
+                }
+
+                over "Constant_1"
+                {
+                    float2 ui:nodegraph:node:size = (155, 53)
+                    int ui:nodegraph:node:stackingOrder = 6855
+                }
+
+                over "Multiply_2"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Contrast_2"
+                {
+                    float2 ui:nodegraph:node:size = (121.5, 145)
+                }
+
+                over "Multiply_4"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Oneminus_2"
+                {
+                    float2 ui:nodegraph:node:size = (158, 109)
+                }
+
+                over "Swizzle_9"
+                {
+                    float2 ui:nodegraph:node:size = (148.5, 53)
+                }
+
+                over "Image_2"
+                {
+                    string inputs:filtertype = "cubic"
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                    int ui:nodegraph:node:stackingOrder = 6856
+                }
+
+                over "Multiply_10"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Add_1"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Add_9"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Oneminus_1"
+                {
+                    float2 ui:nodegraph:node:size = (158, 109)
+                }
+
+                over "Texcoord"
+                {
+                    float2 ui:nodegraph:node:size = (180.5, 53)
+                }
+
+                over "Swizzle"
+                {
+                    float2 ui:nodegraph:node:size = (133.5, 40)
+                }
+
+                over "Dot_2"
+                {
+                    float2 ui:nodegraph:node:size = (44, 18)
+                }
+
+                over "Clamp_1"
+                {
+                    float2 ui:nodegraph:node:size = (103, 145)
+                }
+
+                over "Time"
+                {
+                    float2 ui:nodegraph:node:size = (122.5, 53)
+                }
+
+                over "Add_2"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Image_3"
+                {
+                    string inputs:filtertype = "cubic"
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                    int ui:nodegraph:node:stackingOrder = 6857
+                }
+
+                over "Add_16"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Clamp_2"
+                {
+                    float2 ui:nodegraph:node:size = (106, 145)
+                }
+
+                over "Clamp"
+                {
+                    float2 ui:nodegraph:node:size = (91, 145)
+                }
+
+                over "Constant_16"
+                {
+                    float2 ui:nodegraph:node:size = (162.5, 53)
+                }
+
+                over "Add_14"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Constant_17"
+                {
+                    float2 ui:nodegraph:node:size = (161.5, 53)
+                }
+
+                over "Multiply_18"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Multiply_16"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Image_8"
+                {
+                    string inputs:filtertype = "cubic"
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                    int ui:nodegraph:node:stackingOrder = 6847
+                }
+
+                over "Add_12"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Texcoord_4"
+                {
+                    float2 ui:nodegraph:node:size = (180.5, 53)
+                    int ui:nodegraph:node:stackingOrder = 6846
+                }
+
+                over "Multiply_21"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Image_7"
+                {
+                    string inputs:filtertype = "cubic"
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                    int ui:nodegraph:node:stackingOrder = 6848
+                }
+
+                over "Time_4"
+                {
+                    float2 ui:nodegraph:node:size = (122.5, 53)
+                }
+
+                over "Add_13"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Multiply_22"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Constant_14"
+                {
+                    float2 ui:nodegraph:node:size = (163.5, 53)
+                }
+
+                over "Multiply_19"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Constant_18"
+                {
+                    float2 ui:nodegraph:node:size = (162.5, 53)
+                }
+
+                over "Multiply_20"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Constant_15"
+                {
+                    float2 ui:nodegraph:node:size = (162.5, 53)
+                }
+
+                over "Contrast_3"
+                {
+                    float2 ui:nodegraph:node:size = (121.5, 145)
+                }
+
+                over "Mix_3"
+                {
+                    float2 ui:nodegraph:node:size = (109, 145)
+                }
+
+                over "Mix_4"
+                {
+                    float2 ui:nodegraph:node:size = (109, 145)
+                }
+
+                over "Constant_12"
+                {
+                    float2 ui:nodegraph:node:size = (162, 53)
+                }
+
+                over "Multiply_15"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Time_3"
+                {
+                    float2 ui:nodegraph:node:size = (122.5, 53)
+                }
+
+                over "Constant_11"
+                {
+                    float2 ui:nodegraph:node:size = (160.5, 53)
+                }
+
+                over "Constant_5"
+                {
+                    float2 ui:nodegraph:node:size = (157, 53)
+                }
+
+                over "Image"
+                {
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                }
+
+                over "Constant_2"
+                {
+                    float2 ui:nodegraph:node:size = (158.5, 53)
+                }
+
+                over "Clamp_4"
+                {
+                    float2 ui:nodegraph:node:size = (106, 145)
+                }
+
+                over "Constant_3"
+                {
+                    float2 ui:nodegraph:node:size = (158, 53)
+                }
+
+                over "Multiply_8"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Clamp_3"
+                {
+                    float2 ui:nodegraph:node:size = (106, 145)
+                }
+
+                over "Constant_4"
+                {
+                    float2 ui:nodegraph:node:size = (157, 53)
+                }
+
+                over "Constant"
+                {
+                    float2 ui:nodegraph:node:size = (141.5, 53)
+                }
+
+                over "Combine2"
+                {
+                    float2 ui:nodegraph:node:size = (144.5, 53)
+                }
+
+                over "Multiply_11"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Add_10"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Multiply"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Combine2_1"
+                {
+                    float2 ui:nodegraph:node:size = (157, 53)
+                }
+
+                over "Multiply_17"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Constant_13"
+                {
+                    float2 ui:nodegraph:node:size = (162.5, 53)
+                }
+
+                over "Image_6"
+                {
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                }
+
+                over "Image_1"
+                {
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                }
+
+                over "Mix_1"
+                {
+                    float2 ui:nodegraph:node:size = (109, 145)
+                }
+
+                over "Multiply_5"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Multiply_13"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Texcoord_1"
+                {
+                    float2 ui:nodegraph:node:size = (180.5, 53)
+                }
+
+                over "Constant_7"
+                {
+                    float2 ui:nodegraph:node:size = (157, 53)
+                }
+
+                over "Multiply_6"
+                {
+                    float2 ui:nodegraph:node:size = (60, 36)
+                }
+
+                over "Mix_2"
+                {
+                    float2 ui:nodegraph:node:size = (109, 145)
+                }
+
+                over "Constant_8"
+                {
+                    float2 ui:nodegraph:node:size = (157.5, 53)
+                }
+
+                over "Constant_9"
+                {
+                    float2 ui:nodegraph:node:size = (157, 53)
+                }
+
+                over "Constant_6"
+                {
+                    float2 ui:nodegraph:node:size = (157, 53)
+                }
+
+                over "Mix"
+                {
+                    float2 ui:nodegraph:node:size = (109, 145)
+                }
+
+                over "Image_5"
+                {
+                    string inputs:filtertype = "cubic"
+                    float2 ui:nodegraph:node:size = (148.5, 199)
+                    int ui:nodegraph:node:stackingOrder = 6850
+                    string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:default", "inputs:texcoord", "inputs:texcoord", "inputs:texcoord", "inputs:default", "inputs:file"]
+                }
+
+                over "Constant_10"
+                {
+                    float2 ui:nodegraph:node:size = (163.5, 53)
+                }
+
+                over "Add"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Add_7"
+                {
+                    float2 ui:nodegraph:node:size = (61.5, 36.5)
+                }
+
+                over "Texcoord_2"
+                {
+                    float2 ui:nodegraph:node:size = (180.5, 53)
+                }
+            }
+        }
+    }
+}
+
