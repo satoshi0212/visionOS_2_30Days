@@ -26,7 +26,7 @@ X posts: [#30_days_visionOS](https://x.com/hashtag/30_days_visionOS?f=live)
 | 13 | [Download HLS](https://x.com/shmdevelop/status/1888392374944170222) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/c7f7aab9-369a-4b71-b18a-79399bd2098b"> |
 | 14 | [Multiple Portals](http://x.com/shmdevelop/status/1888804513865408825) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/020a38ba-c1d0-4063-8f85-3e9fd4ee0198"> |
 | 15 | [Video with Shader](https://x.com/shmdevelop/status/1889147346669195375) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/5cf56816-1aa3-42f7-8105-74cc474bce15"> |
-| 16 | [Hold your thumbs up](https://x.com/shmdevelop/status/1923211805083816269) | ✔︎ | <img width="600" alt="" src="https://github.com/user-attachments/assets/3f390d26-4fc8-4fa6-9673-a6db7595b7bc"> |
+| 16 | [Hold your thumbs up](https://x.com/shmdevelop/status/1923211805083816269) | - | <img width="600" alt="" src="https://github.com/user-attachments/assets/3f390d26-4fc8-4fa6-9673-a6db7595b7bc"> |
 
 # Sponsors
 
